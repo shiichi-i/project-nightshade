@@ -1,5 +1,7 @@
 const layerStyles = {
     seafoam: {
-        bgGradient: 'linear(to-tl, #126CB0, #5AE399)',
+        bgGradient: `linear(to-tl, #12c6b0, #5ae399)`,
     },
 }
+
+export default layerStyles;
