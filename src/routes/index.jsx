@@ -2,7 +2,9 @@ import { Routes, Route } from 'react-router-dom';
 
 import Main from '../views';
 import Home from '../views/Home';
-import Services from '../views/Services';
+import About from '../views/About';
+import Events from '../views/Events';
+import Projects from '../views/Projects';
 
 const AppRoutes = () => {
     return (
@@ -13,7 +15,9 @@ const AppRoutes = () => {
 
         <Route path="/" element={<Main />}>
           <Route path="" element={<Home />} />
-          <Route path="services" element={<Services />} />
+          <Route path="about" element={<About />} />
+          <Route path="events" element={<Events />} />
+          <Route path="projects" element={<Projects />} />
         </Route>
           
 

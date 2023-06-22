@@ -18,8 +18,8 @@ const navigationLinks = [
         path: '/events',
     },
     {
-        label: 'Services',
-        path: '/services',
+        label: 'Projects',
+        path: '/projects',
     },
     
   ];
