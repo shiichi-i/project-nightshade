@@ -8,6 +8,9 @@ const Text = {
         },
         secondary: {
             bgColor: '#5AE399'
+        },
+        galaxy: {
+            textColor: '#16142b'
         }
     }
 

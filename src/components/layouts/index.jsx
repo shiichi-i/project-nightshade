@@ -7,15 +7,19 @@ import NavBar from './NavBar';
 const navigationLinks = [
     {
         label: 'Home',
+        path: '/',
     },
     {
         label: 'About',
+        path: '/about',
     },
     {
         label: 'Events',
+        path: '/events',
     },
     {
-        label: 'Sign In',
+        label: 'Services',
+        path: '/services',
     },
     
   ];
