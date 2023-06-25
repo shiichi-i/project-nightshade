@@ -3,7 +3,8 @@ const colors = {
     secondary: '#5AE399',
     placeholder: '#3c3c43',
     dashed: '#b9b9bc',
-    darkBlue: '#16142B'
+    darkBlue: '#16142B',
+    midnight: '#BA55E3',
   };
   
   export default colors;

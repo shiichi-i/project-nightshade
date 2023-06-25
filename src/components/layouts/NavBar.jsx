@@ -32,7 +32,7 @@ const NavBar = ({ navigationLinks = [] }) => {
             </Box>
 
             <Box position="relative" pt="10px" w="full" display={{base: 'none', md: 'block'}}>
-                <Button position="absolute" right="10" bg="blackAlpha.600" _hover={{ bg: 'secondary'}} display={{base: 'none', md: 'block'}}>
+                <Button position="absolute" right="10" bg="blackAlpha.600" _hover={{ bg: 'secondary'}} display={{base: 'none', md: 'block'}} onClick={() => navigate("/login")}>
                     <Text>Log in</Text>
                 </Button>
             </Box>
@@ -65,7 +65,7 @@ const NavBar = ({ navigationLinks = [] }) => {
                     </Box>
 
                     <Box w="full" align="middle" mt="10vh">
-                        <Button borderRadius="20px" h="50px" w="50%" bg="darkBlue" _hover={{bg:'secondary'}}><Text fontSize="20px">Log In</Text></Button>
+                        <Button borderRadius="20px" h="50px" w="50%" bg="darkBlue" _hover={{bg:'secondary'}}><Text fontSize="20px" onClick={() => navigate("/login")}>Log In</Text></Button>
                     </Box>
                 
                 </Box>
