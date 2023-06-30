@@ -8,8 +8,7 @@ import About from '../views/About';
 import Events from '../views/Events';
 import Projects from '../views/Projects';
 
-import Profile from '../views/Profile';
-//import MyProfile from '../views/Profile/myProfile';
+import MyProfile from '../views/Profile/myProfile';
 
 const AppRoutes = () => {
     return (
@@ -25,7 +24,7 @@ const AppRoutes = () => {
           <Route path="events" element={<Events />} />
           <Route path="projects" element={<Projects />} />
 
-          <Route path="profile.id" element={<Profile />} />
+          <Route path="profile/:id" element={<MyProfile />} />
 
         </Route>
           

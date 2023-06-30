@@ -22,12 +22,12 @@ const NavBar = ({ navigationLinks = [] }) => {
 
             <Box display={{base: 'none', md: 'flex'}} flexDir="row">
             {navigationLinks.map((link) => (
-                <>
-                <Button key={link.label} borderRadius="0" bg="whiteAlpha.100" h="full" w="100px" _hover={{ bg: 'blackAlpha.300'}} onClick={() => navigate(link.path)}>
-                    <Text textColor="galaxy">{link.label}</Text>
-                </Button>
-                <Divider orientation="vertical" bg="#16142b" w="1px"/>
-                </>
+                <Box key={link.label}>
+                    <Button borderRadius="0" bg="whiteAlpha.100" h="full" w="100px" _hover={{ bg: 'blackAlpha.300'}} onClick={() => navigate(link.path)}>
+                        <Text textColor="galaxy">{link.label}</Text>
+                    </Button>
+                    <Divider orientation="vertical" bg="#16142b" w="1px" mt="-60px"/>
+                </Box>
             ))}
             </Box>
 
@@ -55,12 +55,12 @@ const NavBar = ({ navigationLinks = [] }) => {
 
                     <Box mt="20vh">
                     {navigationLinks.map((link) => (
-                        <>
-                        <Button key={link.label} borderRadius="0" bg="whiteAlpha.100" w="full" h="75px" _hover={{ bg: 'blackAlpha.300'}} onClick={() => navigate(link.path)}>
+                        <Box key={link.label}>
+                        <Button borderRadius="0" bg="whiteAlpha.100" w="full" h="75px" _hover={{ bg: 'blackAlpha.300'}} onClick={() => navigate(link.path)}>
                             <Text fontSize="22px" textColor="galaxy">{link.label}</Text>
                         </Button>
                         <Divider orientation="horizontal" bg="#16142b" w="1px"/>
-                        </>
+                        </Box>
                     ))}
                     </Box>
 
