@@ -14,7 +14,6 @@ const NavBar = ({ navigationLinks = [] }) => {
     const { isOpen, onOpen, onClose } = useDisclosure();
     const btnRef = React.useRef();
 
-
     return(
         <Box layerStyle="seafoam" w="full" h="60px" display="flex" flexDir="row">
             
@@ -31,11 +30,13 @@ const NavBar = ({ navigationLinks = [] }) => {
             ))}
             </Box>
 
-            <Box position="relative" pt="10px" w="full" display={{base: 'none', md: 'block'}}>
-                <Button position="absolute" right="10" bg="blackAlpha.600" _hover={{ bg: 'secondary'}} display={{base: 'none', md: 'block'}} onClick={() => navigate("/login")}>
-                    <Text>Log in</Text>
-                </Button>
-            </Box>
+                {/** IF logged OUT */}
+                <Box position="relative" pt="10px" w="full" display={{base: 'none', md: 'block'}}>
+                    <Button position="absolute" right="10" bg="blackAlpha.600" _hover={{ bg: 'secondary'}} display={{base: 'none', md: 'block'}} onClick={() => navigate("/login")}>
+                        <Text>Log in</Text>
+                    </Button>
+                </Box>
+            
 
             <Box position="relative" pt="10px" w="full" display={{base: 'block', md: 'none'}}>
                 <Button position="absolute" right="10" bg="darkBlue" _hover={{ bg: 'secondary'}} display={{base: 'block', md: 'none'}} onClick={onOpen} ref={btnRef}>

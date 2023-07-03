@@ -4,6 +4,7 @@ import { keyframes, styled } from "styled-components";
 import { useState, useEffect } from "react";
 import { db } from '../../firebase-config';
 import { getDoc, doc } from 'firebase/firestore';
+import { useParams } from "react-router-dom";
 
 import pdID from '../../assets/edit_PDID.png';
 import SonicBanner from '../../assets/sonic_frontiers.gif';
@@ -31,8 +32,13 @@ const rainbow = keyframes`
 
 const Profile = () => {
 
+    const { id } = useParams();
+
     const [fName, setFName] = useState("");
     const [lName, setLName] = useState("");
+    const [bioDesc, setBioDesc] = useState("");
+    const [senior, setSenior] = useState(false);
+    const [achievements, setAchievements] = useState([]);
 
 
     useEffect(() => {
@@ -40,6 +46,9 @@ const Profile = () => {
             const ed = await getDoc(doc(db, "profiles", "PfzG0Ae9NJSE5uvBxRZz"))
                 setFName(ed.data().fName)
                 setLName(ed.data().lName)
+                setBioDesc(ed.data().bioDesc)
+                setAchievements(ed.data().achievements)
+                setSenior(ed.data().isSenior)
         }
         profile()
     }, [])
@@ -50,17 +59,17 @@ const Profile = () => {
             <Box display="flex" flexDir={{base: 'column', md: 'row'}}>
                 <Box w={{base: 'full', md: '250px'}} display="flex" justifyContent="center" alignItems="center" flexDir="column">
                     <Image src={pdID} h="200px" w="200px" borderRadius="20px" m="20px" />
-
                 </Box>
 
                 <Box display="flex" flexDir="column" justifyContent={{base: 'center', md:'left'}} alignItems={{base:'center', md:'unset'}} mt={{base: '0', md: '20px'}}>
 
-                    {/** IF Senior Dev is TRUE */}
+                    {senior ? 
                     <Box display="flex" flexDir="row" my="3px">
                         <Anim>
                            SENIOR DEVELOPER
                         </Anim>
-                    </Box>
+                    </Box> : '' }
+                    
 
                     <Text as="b" fontSize="28px" my="10px" >{fName} {lName}</Text>
 
@@ -81,28 +90,14 @@ const Profile = () => {
 
                     {/** Achievements Map */}
                     <Box display="flex" flexDir="column" m="20px">
-
-                        <Box display="flex" flexDir="row" m="10px">
+                        {achievements.map((achievement) => (
+                        <Box display="flex" flexDir="row" m="10px" key={achievement.id}>
                             <Icon as={FiStar} color="white" boxSize={4} mr="20px" />
                             <Text fontWeight="light">
-                                UMAP MicroCredential Achiever, Thailand 2021
+                                {achievement}
                             </Text>
                         </Box>
-
-
-                        <Box display="flex" flexDir="row" m="10px">
-                            <Icon as={FiStar} color="white" boxSize={4} mr="20px" />
-                            <Text fontWeight="light">
-                                Executive Secretary 2021-2022
-                            </Text>
-                        </Box>
-
-                        <Box display="flex" flexDir="row" m="10px">
-                            <Icon as={FiStar} color="white" boxSize={4} mr="20px" />
-                            <Text fontWeight="light">
-                                Secretary of Finance 2020-2021
-                            </Text>
-                        </Box>
+                        ))}
 
                     </Box>
                 </Box>
@@ -118,7 +113,7 @@ const Profile = () => {
                     </Box>
 
                     <Box m={{base: '10px', md: '20px'}}>
-                        <Text>in the middle of developing something cool. stay tuned! 👀 -.:.*pink*cheese*:.:.</Text>
+                        <Text>{bioDesc}</Text>
                     </Box>
                 </Box>
 

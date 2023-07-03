@@ -23,6 +23,7 @@ const navigationLinks = [
     },
     
   ];
+  
 
 const DefaultLayout = ({ children }) => {
     return (
@@ -34,6 +35,7 @@ const DefaultLayout = ({ children }) => {
           <Box m="20px">
             { children }
           </Box>
+
         </Box>
     );
 };
