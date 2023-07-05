@@ -1,14 +1,39 @@
-import { Box, Text, SimpleGrid, GridItem, FormControl, FormLabel, Button, Input, FormHelperText, FormErrorMessage, Image, InputGroup, InputRightElement } from "@chakra-ui/react";
+import { Box, Text, SimpleGrid, GridItem, FormControl, FormLabel, Button, Input, FormHelperText, FormErrorMessage, Image, InputGroup, InputRightElement, useToast } from "@chakra-ui/react";
 import { useState } from 'react';
 import pdLogo from '../../assets/logo_blk.png';
+import { auth } from '../../firebase-config';
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
+
+        const nav = useNavigate();
+
+        const toast = useToast();
 
         const [error, setError] = useState(false);
         const [email, setEmail] = useState("");
         const [password, setPassword] = useState("");
         const [show, setShow] = useState(false);
         const handleClick = () => setShow(!show);
+
+        const handleLogin = (e) => {
+            e.preventDefault();
+            signInWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+                const user = userCredential.user;
+                toast({
+                    title: 'Logged in',
+                    status: 'success',
+                    duration: 3000,
+                    isClosable: true,
+                  })
+                nav("/admin");
+            })
+            .catch(() => {
+                setError(true);
+            })
+        }
 
     return(
         <Box>
@@ -56,7 +81,7 @@ const Login = () => {
                                                 <Text color="pink.500">For account recovery, please contact website superadmin</Text>
                                             </Box>}
                                             <Button position="absolute" type="submit" bg="midnight" _hover={{bg:'darkBlue'}} w="full" borderBottomRadius="0" borderTopRadius="40px" mt="140px"
-                                            >
+                                            onClick={handleLogin}>
                                                 S I G N &nbsp; I N
                                             </Button>
                                         </Box>
