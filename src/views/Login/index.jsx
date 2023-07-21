@@ -1,4 +1,4 @@
-import { Box, Text, SimpleGrid, GridItem, FormControl, FormLabel, Button, Input, FormHelperText, FormErrorMessage, Image, InputGroup, InputRightElement, useToast } from "@chakra-ui/react";
+import { Box, Text, SimpleGrid, GridItem, FormControl, FormLabel, Button, Input, Image, InputGroup, InputRightElement, useToast } from "@chakra-ui/react";
 import { useState } from 'react';
 import pdLogo from '../../assets/logo_blk.png';
 import { auth } from '../../firebase-config';
@@ -21,7 +21,6 @@ const Login = () => {
             e.preventDefault();
             signInWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
-                const user = userCredential.user;
                 toast({
                     title: 'Logged in',
                     status: 'success',

@@ -1,4 +1,4 @@
-import { Routes, Route, Navigate} from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 
 import Main from '../views';
 import Login from '../views/Login';
