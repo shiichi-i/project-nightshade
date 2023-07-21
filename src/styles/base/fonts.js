@@ -1,5 +1,5 @@
 const fonts = {
-    heading: `Josefin Sans`,
+    heading: `Jost`,
     body: `Josefin Sans`,
   }
 
