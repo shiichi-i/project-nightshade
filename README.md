@@ -2,8 +2,8 @@
 
 Development project of the Programmer's Den website 2023 and beyond.
 The first ever dynamic cloud hosted web app of the organization complete with the following features: 
-- Member Profiles 
 - Admin Editting Permissions 
+- Membership registration form
 
 
 ### Contribute with npm/yarn start.

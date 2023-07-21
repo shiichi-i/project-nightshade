@@ -7,6 +7,8 @@ import layerStyles from './base/layerStyles';
 
 //Components
 import Text from './components/Text';
+import Heading from './components/Heading';
+
 
 const config = {
     initialColorMode: 'light',
@@ -29,6 +31,7 @@ const styles = {
     layerStyles,
     components: {
         Text,
+        Heading,
       },
   });
   
