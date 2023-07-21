@@ -3,7 +3,7 @@ import { FiChevronsUp, FiStar } from 'react-icons/fi';
 import { keyframes, styled } from "styled-components";
 import { useState, useEffect } from "react";
 import { db } from '../../firebase-config';
-import { getDoc, doc } from 'firebase/firestore';
+import { doc, onSnapshot } from 'firebase/firestore';
 import { useParams } from "react-router-dom";
 
 import pdID from '../../assets/edit_PDID.png';
@@ -32,25 +32,29 @@ const rainbow = keyframes`
 
 const Profile = () => {
 
-    const { id } = useParams();
-
     const [fName, setFName] = useState("");
     const [lName, setLName] = useState("");
     const [bioDesc, setBioDesc] = useState("");
     const [senior, setSenior] = useState(false);
     const [achievements, setAchievements] = useState([]);
 
+    const { id } = useParams();
+
 
     useEffect(() => {
-        const profile = async () =>{
-            const ed = await getDoc(doc(db, "profiles", "PfzG0Ae9NJSE5uvBxRZz"))
-                setFName(ed.data().fName)
-                setLName(ed.data().lName)
-                setBioDesc(ed.data().bioDesc)
-                setAchievements(ed.data().achievements)
-                setSenior(ed.data().isSenior)
-        }
-        profile()
+                //setBioDesc(ed.data().bioDesc)
+                //setAchievements(ed.data().achievements)
+                //setSenior(ed.data().isSenior)
+
+                setBioDesc("bio")
+                //setAchievements([""])
+                setSenior(false)
+            onSnapshot(doc(db, "accounts", id), (doc) => {
+                if(doc.object){
+                    setFName(doc.data().fName)
+                    setLName(doc.data().lName)
+                }
+            });
     }, [])
 
     return(
@@ -88,7 +92,7 @@ const Profile = () => {
                     <Text fontSize="18px" as="b">Achievements</Text>
                     <Divider border="1.5px solid" color="teal.200" w="90%"/>
 
-                    {/** Achievements Map */}
+                    {/** Achievements Map
                     <Box display="flex" flexDir="column" m="20px">
                         {achievements.map((achievement) => (
                         <Box display="flex" flexDir="row" m="10px" key={achievement.id}>
@@ -99,7 +103,7 @@ const Profile = () => {
                         </Box>
                         ))}
 
-                    </Box>
+                    </Box>*/}
                 </Box>
 
                 {/** BIO */}

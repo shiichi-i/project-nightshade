@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 
 /** admin@progden.dev == "-(9wLk50n!c" (at least 6 characters)*/
 
-const Create = () => {
+const CreateEvent = () => {
 
     const toast = useToast();
     const navigate = useNavigate();
@@ -107,4 +107,4 @@ const Create = () => {
     </Box>
  );
 };
-export default Create;
+export default CreateEvent;
