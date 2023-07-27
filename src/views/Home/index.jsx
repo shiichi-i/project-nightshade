@@ -3,6 +3,7 @@ import {
     Text,
     Image,
     Button,
+    Heading,
  } from "@chakra-ui/react";
  import { motion } from 'framer-motion';
 
@@ -11,7 +12,11 @@ import Banner from '../../assets/pd_banner.png';
 import Graphic from '../../assets/graphic.png';
 import Polygon from '../../assets/polygon.png';
 import Star from '../../assets/star.png';
+import Star2 from '../../assets/Star 2.png';
 import Purple from '../../assets/divider.png';
+import HeadPurple from '../../assets/Vector 15.png';
+import layerStyles from "../../styles/base/layerStyles";
+import Rectangle from '../../assets/Rectangle 56.png';
 
 const Home = () => {
     return(
@@ -21,9 +26,9 @@ const Home = () => {
             animate={{ opacity: [0,1], y: ['25px', '0px']}}
             transition={{ duration: 0.5, delay: 0.5 }}>
             <Box w="90vw" h="80vh" display="flex" flexDir={{base: 'column', md: 'row-reverse'}} mt="24px">
-                <Box w={{base: '100%', md: '50%'}} h="full" position="relative">
+                <Box w={{base: '100%', md: '50%'}} h="full" position="relative"  >
                     {/** graphic */}
-                    <Box h="full" display="flex" alignItems="center">
+                    <Box h="full" display="flex" alignItems="center"border="2px solid red" >
 
                         {/** Polygon */}
                         <Box position="absolute" left={{base: '40vw', md: '25vw'}}>
@@ -69,7 +74,7 @@ const Home = () => {
                     
                 </Box>
                 <Box w={{base: '100%', md: '50%'}} h="full"
-                display="flex" alignItems="center" justifyContent="center">
+                display="flex" alignItems="center" justifyContent="center" >
                     {/** text */}
                     <Box ml="5vw">
                         <Image src={Banner} w={{base: '95%', md: '80%'}} mb="12px" />
@@ -96,9 +101,51 @@ const Home = () => {
             {/** --------- below fold --------- */}
 
             <Image src={Purple} w="full" mt={{base: '-25px', md: '-170px'}} />
-            <Box w="full" h="500px" bg="midnight">
+            <Box w="full" h="500px" bg="midnight" display="flex" flexDir={{base:"column", md:"row"}} >
+                {/* <Text>Juan Dela Cruz</Text> */}
+                <Box w={{base: '100%',md:'50%'}} h="full"
+                display="flex" alignItems="center" justifyContent="center" border="2px solid red" position="relative" >
+                    {/** STAR*/}
+                    <Box ml="5vw" h="full" display="flex" alignItems="center" >
+                        <Box position="absolute" top={{base: '0vh', md: '1vh'}} left={{base: '15vw', md: '3vw'}} zIndex="200">
+                            <Image src={Star2} w={{base: '80px', md: '120px'}} />
+                        </Box>
+                       
+                        <Box position="absolute" bottom={{base: '0vh', md: '1vh'}} left={{base: '65vw', md: '35vw',lg:"35vw"}} zIndex="200">
+                            <Image src={Star} w={{base: '80px', md: '120px'}} />
+                        </Box>
+                        <Box position="absolute" zIndex="201" padding={{base:"2px"}} border="2px solid red" left={{base:"27vw",md:"7vw"}}>
+                            <Image src={Rectangle} w={{base: '70%', md:"85%",lg:"100%"}}/>
+                        </Box>
+                        
+                    </Box>
+                </Box>
+                   
+                <Box w={{base: '100%',md:'50%'}} h="full"
+                display="flex" alignItems="center" justifyContent="center" border="2px solid red" position="relative">
+                    {/** text */}
+                    <Box ml="5vw" color="black" border="2px solid red">
+                        <Heading fontSize={{base:'25px',md:'45px'}} color="rgb(18,198,176)"pb="20px">MEMBER OF THE MONTH</Heading>
+                        <Heading fontSize={{base:"25px",md:'40px'}}pb="20px" color="rgb(22,20,43)">Juan Dela Cruz</Heading>
+                        <Box w={{base:"95%",md:"95%"}}>
+                        <Text fontSize={{base:"14px",md:"25px"}} color="rgb(22,20,43)">
+                             Hi I’m Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                             sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        </Text>
+                        </Box>
+                        
+                        
+                    </Box>
+                </Box>
                 
+                    
             </Box>
+            <Image src={HeadPurple} w="full" mt={{base: '-25px', md: '-10px'}} />
+            <Box w="90vw" h="80vh" display="flex" flexDir={{base: 'column', md: 'row-reverse'}} mt="24px">
+            <Box w="100px" h="500px" bg="red"></Box>
+            </Box>
+            
             
 
         </Box>

@@ -47,5 +47,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "description": "Development project of the Programmer's Den website 2023 and beyond.\r The first ever dynamic cloud hosted web app of the organization complete with the following features: \r - Admin Editting Permissions \r - Membership registration form",
+  "main": "index.js",
+  "author": "",
+  "license": "ISC"
 }
