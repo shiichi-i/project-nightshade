@@ -34,7 +34,7 @@ const NavBar = ({ navigationLinks = [] }) => {
             transition={{ duration: 0.2 }}>
                 <Box display={{base: 'flex', md: 'none'}}>
                 <Box position="absolute" zIndex="1"
-                layerStyle="seafoam" w="95vw" h="250px" borderBottomRadius="40px">
+                layerStyle="afton" w="95vw" h="250px" borderBottomRadius="40px">
                     <Box mt="40px" display="flex" justifyContent="center" flexDir="column" alignItems="center">
                         {navigationLinks.map((link) => (
                             <Button w="80%" bg="whiteAlpha.400" borderRadius="30px" my="1" key={link.label} onClick={() => {navigate(link.path); setShow(false)}}>
