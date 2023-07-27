@@ -28,7 +28,7 @@ const Home = () => {
             <Box w="90vw" h="80vh" display="flex" flexDir={{base: 'column', md: 'row-reverse'}} mt="24px">
                 <Box w={{base: '100%', md: '50%'}} h="full" position="relative"  >
                     {/** graphic */}
-                    <Box h="full" display="flex" alignItems="center"border="2px solid red" >
+                    <Box h="full" display="flex" alignItems="center">
 
                         {/** Polygon */}
                         <Box position="absolute" left={{base: '40vw', md: '25vw'}}>
