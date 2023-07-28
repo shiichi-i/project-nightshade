@@ -104,31 +104,29 @@ const Home = () => {
             <Box w="full" h="500px" bg="midnight" display="flex" flexDir={{base:"column", md:"row"}} >
                 {/* <Text>Juan Dela Cruz</Text> */}
                 <Box w={{base: '100%',md:'50%'}} h="full"
-                display="flex" alignItems="center" justifyContent="center" border="2px solid red" position="relative" >
+                display="flex" alignItems="center" justifyContent="center"  position="relative" >
                     {/** STAR*/}
-                    <Box ml="5vw" h="full" display="flex" alignItems="center" >
-                        <Box position="absolute" top={{base: '0vh', md: '1vh'}} left={{base: '15vw', md: '3vw'}} zIndex="200">
-                            <Image src={Star2} w={{base: '80px', md: '120px'}} />
+                    <Box position="absolute" h="full" display="flex" alignItems="center" justifyContent="center" mr={0}>
+                        <Box position="absolute" top={{base: '3px', md: '70px',lg:'-20px'}} left={{base: '-25px', md: '-50px',lg:'-60px'}}  zIndex={200}>
+                            <Image src={Star2} w={{base: '55px',md:'100px', lg: '120px'}} />
                         </Box>
-                       
-                        <Box position="absolute" bottom={{base: '0vh', md: '1vh'}} left={{base: '65vw', md: '35vw',lg:"35vw"}} zIndex="200">
-                            <Image src={Star} w={{base: '80px', md: '120px'}} />
+                        <Box mr='0' position="absolute" bottom={{base:'0px', md: '70px',lg:'-15px'}} right={{base: '-28px',sm:'68vw', md: '-50px',lg:"-60px"}} zIndex={200}>
+                        <Image src={Star} w={{base: '55px',md:'100px', lg: '120px'}} />
                         </Box>
-                        <Box position="absolute" zIndex="201" padding={{base:"2px"}} border="2px solid red" left={{base:"27vw",md:"7vw"}}>
-                            <Image src={Rectangle} w={{base: '70%', md:"85%",lg:"100%"}}/>
-                        </Box>
-                        
+                        <Box  zIndex={201}>
+                        <Image src={Rectangle} w={{base:'200px',sm:'240px', md:"320px",lg:"420px"}}/>
+                            </Box>      
                     </Box>
                 </Box>
                    
                 <Box w={{base: '100%',md:'50%'}} h="full"
-                display="flex" alignItems="center" justifyContent="center" border="2px solid red" position="relative">
+                display="flex" alignItems="center" justifyContent="center"  position="relative">
                     {/** text */}
-                    <Box ml="5vw" color="black" border="2px solid red">
+                    <Box ml="3vw" color="black">
                         <Heading fontSize={{base:'25px',md:'45px'}} color="rgb(18,198,176)"pb="20px">MEMBER OF THE MONTH</Heading>
                         <Heading fontSize={{base:"25px",md:'40px'}}pb="20px" color="rgb(22,20,43)">Juan Dela Cruz</Heading>
                         <Box w={{base:"95%",md:"95%"}}>
-                        <Text fontSize={{base:"14px",md:"25px"}} color="rgb(22,20,43)">
+                        <Text fontSize={{base:"14px",sm:'18px',md:"20px"}} color="rgb(22,20,43)">
                              Hi I’m Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
                              sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                             Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
@@ -143,7 +141,6 @@ const Home = () => {
             </Box>
             <Image src={HeadPurple} w="full" mt={{base: '-25px', md: '-10px'}} />
             <Box w="90vw" h="80vh" display="flex" flexDir={{base: 'column', md: 'row-reverse'}} mt="24px">
-            <Box w="100px" h="500px" bg="red"></Box>
             </Box>
             
             
