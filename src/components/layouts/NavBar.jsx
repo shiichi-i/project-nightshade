@@ -51,7 +51,7 @@ const NavBar = ({ navigationLinks = [] }) => {
             </motion.div>
 
             
-            <Box layerStyle="afton" borderRadius="20px" w="95vw" h="60px" display="flex" flexDir="row" zIndex="2">
+            <Box layerStyle="seafoam" borderRadius="20px" w="95vw" h="60px" display="flex" flexDir="row" zIndex="2">
             
                 <Image src={LogoBLK} h="50px" pl="30px" pt="10px" pr="30px"/>
 
@@ -59,6 +59,7 @@ const NavBar = ({ navigationLinks = [] }) => {
                     <Box display={{base: 'none', md: 'flex'}} flexDir="row" position="absolute" right="5">
                     {navigationLinks.map((link) => (
                         <motion.div
+                        key={link.label}
                         whileHover={{
                             marginTop: "10px",
                             scale: 1.1,
