@@ -129,7 +129,7 @@ const Home = () => {
                         <Heading fontSize={{base:'25px',md:'30px', lg:'35px'}} color="rgb(18,198,176)"pb="15px" whiteSpace='nowrap'>MEMBER OF THE MONTH</Heading>
                         <Heading fontSize={{base:"25px",md:'30px', lg:'35px'}}pb={{base:'10px',md:"10px"}} color="rgb(22,20,43)">Juan Dela Cruz</Heading>
                             <Box w={{base:"95%",md:"95%"}}>
-                                <Text fontSize={{base:"12px",md:"14px"}} color="rgb(22,20,43)" mb='20px'>
+                                <Text fontSize={{base:"14px"}} color="rgb(22,20,43)" mb='20px'>
                                     Hi I’m Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
                                     sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                                     Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
@@ -147,37 +147,37 @@ const Home = () => {
                     display="flex" alignItems="center" justifyContent="center"  position="relative" >
                         <Box position="absolute" h="full" display="flex" alignItems="baseline" justifyContent="center" mt={{base:'0px', md:'-140px',lg:'-200px'}}>
                             <Box>
-                                <Image src={Rectangle} w={{base:'200px',sm:'300px', md:"360px",lg:"400px"}}/>
+                                <Image src={Rectangle} w={{base:'200px',sm:'250px', md:"350px",lg:"420px"}}/>
                             </Box>      
                         </Box>
-                    </Box>
-                    {/*PARENT BOX OF THE PROJECT DETAILS DIV*/}
-                    <Box w={{base: '100%',md:'50%'}} h="full"
-                    display="flex" alignItems="baseline" justifyContent="center"  position="relative" >
-                        {/*PROJECT DETAILs*/}
-                        <Box ml="3vw" color="black"  display={{base: 'flex'}} flexDirection={{base:'column',}} alignItems={{base:'center',md:'flex-start'}} mt={{base:'-50px',sm:'50px'}}>
-                            <Heading fontSize={{base:'25px',md:'35px',lg:'45px'}} color="#FFFFFF"pb="20px" whiteSpace={{base:'nowrap'}}>FEATURED PROJECT</Heading>
-                            <Box w={{base:"95%",md:"95%"}}>
-                            <Text fontSize={{base:"14px",sm:'15px',md:"17px"}} color="#FFFFFF" mb='20px'>
-                                Hi I’m Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                            </Text>
-                            </Box>
-                            {/*BUTTON FOR VIEW THE PROJECT*/}
-                            <Box layerStyle="bubblegum" w="200px" h="48px" borderRadius="40px">
-                                <motion.div
-                                whileHover={{ scale: 1.2 }}
-                                whileTap={{ scale: 1.5 }}>
-                                    <Button bg="rgb(18,198,176)" _hover={{bg:'transparet'}} w="200px" h="48px" borderRadius="40px">
-                                        <Text fontSize="14px">VIEW PROJECT</Text>
-                                    </Button>
-                                </motion.div>
-                            </Box>
-                            
+                </Box>
+                {/*PARENT BOX OF THE PROJECT DETAILS DIV*/}
+                <Box w={{base: '100%',md:'50%'}} h="full"
+                display="flex" alignItems="baseline" justifyContent="center"  position="relative" >
+                    {/*PROJECT DETAILs*/}
+                    <Box ml={{sm:"-10px"}} color="black"  display={{base: 'flex'}} flexDirection={{base:'column',}} alignItems={{base:'center',md:'flex-start'}} mt={{base:'-50px',sm:'10px'}} border='1px solid blue'>
+                        <Heading fontSize={{base:'25px',md:'35px',lg:'45px'}} color="#FFFFFF"pb="20px" whiteSpace={{base:'nowrap'}}>FEATURED PROJECT</Heading>
+                        <Box w={{base:"95%",md:"95%"}}>
+                        <Text fontSize={{base:"14px",sm:'15px',md:"17px"}} color="#FFFFFF" mb='20px'>
+                            I’m Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        </Text>
                         </Box>
+                        {/*BUTTON FOR VIEW THE PROJECT*/}
+                        <Box layerStyle="bubblegum" w="200px" h="48px" borderRadius="40px">
+                            <motion.div
+                            whileHover={{ scale: 1.2 }}
+                                whileTap={{ scale: 1.5 }}>
+                                <Button bg="rgb(18,198,176)" _hover={{bg:'transparet'}} w="200px" h="48px" borderRadius="40px">
+                                    <Text fontSize="14px">VIEW PROJECT</Text>
+                                </Button>
+                            </motion.div>
+                        </Box>
+                            
                     </Box>
                 </Box>
+            </Box>
             
             
 
