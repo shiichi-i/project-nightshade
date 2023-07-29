@@ -155,7 +155,7 @@ const Home = () => {
                 <Box w={{base: '100%',md:'50%'}} h="full"
                 display="flex" alignItems="baseline" justifyContent="center"  position="relative" >
                     {/*PROJECT DETAILs*/}
-                    <Box ml={{sm:"-10px"}} color="black"  display={{base: 'flex'}} flexDirection={{base:'column',}} alignItems={{base:'center',md:'flex-start'}} mt={{base:'-50px',sm:'10px'}} border='1px solid blue'>
+                    <Box ml={{sm:"-10px"}} color="black"  display={{base: 'flex'}} flexDirection={{base:'column',}} alignItems={{base:'center',md:'flex-start'}} mt={{base:'-50px',sm:'10px'}}>
                         <Heading fontSize={{base:'25px',md:'35px',lg:'45px'}} color="#FFFFFF"pb="20px" whiteSpace={{base:'nowrap'}}>FEATURED PROJECT</Heading>
                         <Box w={{base:"95%",md:"95%"}}>
                         <Text fontSize={{base:"14px",sm:'15px',md:"17px"}} color="#FFFFFF" mb='20px'>
