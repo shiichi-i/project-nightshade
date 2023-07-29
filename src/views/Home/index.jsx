@@ -163,20 +163,20 @@ const Home = () => {
                             sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                             Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                         </Text>
-                        </Box>
-                        {/*BUTTON FOR VIEW THE PROJECT*/}
-                        <Box layerStyle="bubblegum" w="200px" h="48px" borderRadius="40px">
-                            <motion.div
-                            whileHover={{ scale: 1.2 }}
-                                whileTap={{ scale: 1.5 }}>
-                                <Button bg="rgb(18,198,176)" _hover={{bg:'transparet'}} w="200px" h="48px" borderRadius="40px">
-                                    <Text fontSize="14px">VIEW PROJECT</Text>
-                                </Button>
-                            </motion.div>
-                        </Box>
-                            
                     </Box>
+                    {/*BUTTON FOR VIEW THE PROJECT*/}
+                    <Box layerStyle="bubblegum" w="200px" h="48px" borderRadius="40px">
+                         <motion.div
+                        whileHover={{ scale: 1.2 }}
+                            whileTap={{ scale: 1.5 }}>
+                            <Button bg="rgb(18,198,176)" _hover={{bg:'transparet'}} w="200px" h="48px" borderRadius="40px">
+                                <Text fontSize="14px">VIEW PROJECT</Text>
+                             </Button>
+                        </motion.div>
+                    </Box>
+                            
                 </Box>
+            </Box>
             </Box>
             
             
