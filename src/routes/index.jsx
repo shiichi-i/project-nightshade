@@ -21,6 +21,8 @@ import ListEvent from '../views/Admin/AdminEvents/listEvents';
 
 import Officers from '../views/Admin/Officers';
 
+import Perks from '../views/Perks';
+
 const AppRoutes = () => {
 
     return (
@@ -32,6 +34,8 @@ const AppRoutes = () => {
           <Route path="" element={<Home />} />
           <Route path="about" element={<About />} />
           <Route path="events" element={<Events />} />
+          <Route path="perks" element={<Perks />} />
+
 
           <Route path="members" element={<Members />}>
             <Route path="" element={<MemberList />} />
