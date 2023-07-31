@@ -28,7 +28,7 @@ const Home = () => {
             <Box w="90vw" h="80vh" display="flex" flexDir={{base: 'column', md: 'row-reverse'}} mt="24px">
                 <Box w={{base: '100%', md: '50%'}} h="full" position="relative"  >
                     {/** graphic */}
-                    <Box h="full" display="flex" alignItems="center"border="2px solid red" >
+                    <Box h="full" display="flex" alignItems="center">
 
                         {/** Polygon */}
                         <Box position="absolute" left={{base: '40vw', md: '25vw'}}>
@@ -101,49 +101,82 @@ const Home = () => {
             {/** --------- below fold --------- */}
 
             <Image src={Purple} w="full" mt={{base: '-25px', md: '-170px'}} />
-            <Box w="full" h="500px" bg="midnight" display="flex" flexDir={{base:"column", md:"row"}} >
-                {/* <Text>Juan Dela Cruz</Text> */}
-                <Box w={{base: '100%',md:'50%'}} h="full"
-                display="flex" alignItems="center" justifyContent="center" border="2px solid red" position="relative" >
-                    {/** STAR*/}
-                    <Box ml="5vw" h="full" display="flex" alignItems="center" >
-                        <Box position="absolute" top={{base: '0vh', md: '1vh'}} left={{base: '15vw', md: '3vw'}} zIndex="200">
-                            <Image src={Star2} w={{base: '80px', md: '120px'}} />
-                        </Box>
-                       
-                        <Box position="absolute" bottom={{base: '0vh', md: '1vh'}} left={{base: '65vw', md: '35vw',lg:"35vw"}} zIndex="200">
-                            <Image src={Star} w={{base: '80px', md: '120px'}} />
-                        </Box>
-                        <Box position="absolute" zIndex="201" padding={{base:"2px"}} border="2px solid red" left={{base:"27vw",md:"7vw"}}>
-                            <Image src={Rectangle} w={{base: '70%', md:"85%",lg:"100%"}}/>
-                        </Box>
+            <Box w="full" h="500px" bg="midnight" display="flex" alignItems='center' justifyContent='center'>
+                {/* MEMBER OF THE MONTH IMAGE PLACEHOLDER*/}
+                <Box w="90vw" h="500px" display="flex" flexDir={{base: 'column', md: 'row'}} bg='midnight'>
+                    {/*PARENT BOX OF THE SHAPES DIV*/}
+                    <Box ml={{md:'25px'}} w={{base: '100%',md:'50%'}} h='full'
+                    display="flex" alignItems="center" justifyContent="center"  position="relative" minHeight='250px'>
+                        {/*SHAPES FORMATTING AND POSITIONING*/}
                         
+                        <Box position="absolute" h="full" display="flex" alignItems="center" justifyContent="center" mr={0}>
+                            <Box position="absolute" top={{base:'-5px',sm: '-30px', md: '60px',lg:'-20px'}} left={{base:'-50px', md: '-50px',lg:'-60px'}}  zIndex={200}>
+                                <Image src={Star2} w={{base: '80px',sm:'90px', lg: '120px'}} />
+                            </Box>
+                            <Box mr='0' position="absolute" bottom={{base:'-5px',sm:'-30px', md: '70px',lg:'-15px'}} right={{base: '-50px', md: '-50px',lg:"-60px"}} zIndex={200}>
+                                <Image src={Star} w={{base: '80px',sm:'90px', lg: '120px'}} />
+                            </Box>
+                            <Box  zIndex={201}>
+                                <Image src={Rectangle} w={{base:'200px',sm:'250px', md:"350px",lg:"420px"}}/>
+                                </Box>      
+                        </Box>
+                    </Box>
+                {/*PARENT BOX OF THE DETAILS DIV*/}
+                <Box w={{base: '100%',md:'50%'}} h="full"
+                display="flex" alignItems="flex-start" justifyContent="center"  position="relative">
+                    {/*DETAILS OF THE MEMBER */}
+                    <Box ml={{md:'50px'}} color="black"  display={{base: 'flex'}} flexDirection={{base:'column',}} alignItems={{base:'center',md:'flex-start'}} mt={{base:'15px',sm:'30px',md:'100px'}}>
+                        <Heading fontSize={{base:'25px',md:'30px', lg:'35px'}} color="rgb(18,198,176)"pb="15px" whiteSpace='nowrap'>MEMBER OF THE MONTH</Heading>
+                        <Heading fontSize={{base:"25px",md:'30px', lg:'35px'}}pb={{base:'10px',md:"10px"}} color="rgb(22,20,43)">Juan Dela Cruz</Heading>
+                            <Box w={{base:"95%",md:"95%"}}>
+                                <Text fontSize={{base:"14px"}} color="rgb(22,20,43)" mb='20px'>
+                                    Hi I’m Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                </Text>
+                            </Box>
+                        </Box>
                     </Box>
                 </Box>
-                   
+            </Box>
+            {/*PUTTING THE CURVED DESIGN IN THE PAGE*/}
+            <Image src={HeadPurple} w="full" mt={{base: '-25px', md: '-10px'}} />
+            <Box w="90vw" h="500px" display="flex" flexDir={{base: 'column', md: 'row-reverse'}} >
+                {/*PLACEHOLDER FOR THE PROJECT SHOWCASE*/}
                 <Box w={{base: '100%',md:'50%'}} h="full"
-                display="flex" alignItems="center" justifyContent="center" border="2px solid red" position="relative">
-                    {/** text */}
-                    <Box ml="5vw" color="black" border="2px solid red">
-                        <Heading fontSize={{base:'25px',md:'45px'}} color="rgb(18,198,176)"pb="20px">MEMBER OF THE MONTH</Heading>
-                        <Heading fontSize={{base:"25px",md:'40px'}}pb="20px" color="rgb(22,20,43)">Juan Dela Cruz</Heading>
+                    display="flex" alignItems="center" justifyContent="center"  position="relative" >
+                        <Box position="absolute" h="full" display="flex" alignItems="baseline" justifyContent="center" mt={{base:'0px', md:'-140px',lg:'-200px'}}>
+                            <Box>
+                                <Image src={Rectangle} w={{base:'200px',sm:'250px', md:"350px",lg:"420px"}}/>
+                            </Box>      
+                        </Box>
+                </Box>
+                {/*PARENT BOX OF THE PROJECT DETAILS DIV*/}
+                <Box w={{base: '100%',md:'50%'}} h="full"
+                display="flex" alignItems="baseline" justifyContent="center"  position="relative" >
+                    {/*PROJECT DETAILs*/}
+                    <Box ml={{sm:"-10px"}} color="black"  display={{base: 'flex'}} flexDirection={{base:'column',}} alignItems={{base:'center',md:'flex-start'}} mt={{base:'-50px',sm:'10px'}}>
+                        <Heading fontSize={{base:'25px',md:'35px',lg:'45px'}} color="#FFFFFF"pb="20px" whiteSpace={{base:'nowrap'}}>FEATURED PROJECT</Heading>
                         <Box w={{base:"95%",md:"95%"}}>
-                        <Text fontSize={{base:"14px",md:"25px"}} color="rgb(22,20,43)">
-                             Hi I’m Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                             sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        <Text fontSize={{base:"14px",sm:'15px',md:"17px"}} color="#FFFFFF" mb='20px'>
+                            I’m Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                             Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                         </Text>
-                        </Box>
-                        
-                        
                     </Box>
+                    {/*BUTTON FOR VIEW THE PROJECT*/}
+                    <Box layerStyle="bubblegum" w="200px" h="48px" borderRadius="40px">
+                         <motion.div
+                        whileHover={{ scale: 1.2 }}
+                            whileTap={{ scale: 1.5 }}>
+                            <Button bg="rgb(18,198,176)" _hover={{bg:'transparet'}} w="200px" h="48px" borderRadius="40px">
+                                <Text fontSize="14px">VIEW PROJECT</Text>
+                             </Button>
+                        </motion.div>
+                    </Box>
+                            
                 </Box>
-                
-                    
             </Box>
-            <Image src={HeadPurple} w="full" mt={{base: '-25px', md: '-10px'}} />
-            <Box w="90vw" h="80vh" display="flex" flexDir={{base: 'column', md: 'row-reverse'}} mt="24px">
-            <Box w="100px" h="500px" bg="red"></Box>
             </Box>
             
             
