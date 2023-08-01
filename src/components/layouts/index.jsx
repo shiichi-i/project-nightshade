@@ -2,7 +2,7 @@ import { Box } from '@chakra-ui/react';
 
 // Components
 import NavBar from './NavBar';
-//import Footer from './Footer';
+import Footer from './Footer';
 
 const navigationLinks = [
     {
@@ -38,7 +38,7 @@ const DefaultLayout = ({ children }) => {
 
           
 
-        {/**<Footer />*/}
+        <Footer navigationLinks={navigationLinks}/>
         </Box>
     );
 };
