@@ -16,6 +16,20 @@ const dummyData = [
         date: 'TUE',
         division: 'Main',
     },
+    {
+        studentNo: '22642069',
+        name: 'Juan Dela Cruz',
+        course: 'BS Information Technology',
+        date: 'WED',
+        division: 'Main',
+    },
+    {
+        studentNo: '22642069',
+        name: 'Juan Dela Cruz',
+        course: 'BS Information Technology',
+        date: 'TUE',
+        division: 'Main',
+    },
 
 ];
 
@@ -151,9 +165,9 @@ const Admin = () => {
         <Box w="full" h="10px" layerStyle="bubblegum"/>
 
             
-        <Box>
-            <TableContainer m="48px" border="solid 3px" borderColor="#57E9D8" borderRadius="40px" >
-                <Table m="24px">
+        <Box mb="80px">
+            <TableContainer m="36px" border="solid 3px" borderColor="#57E9D8" borderRadius="40px" >
+                <Table m="24px" variant='striped' colorScheme="whiteAlpha">
                     <Thead>
                         <Tr>
                             <Th color="#57E9D8">Student No.</Th>

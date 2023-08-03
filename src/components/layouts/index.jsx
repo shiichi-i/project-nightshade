@@ -38,7 +38,7 @@ const DefaultLayout = ({ children }) => {
 
           
 
-        {/**<Footer navigationLinks={navigationLinks}/>*/}
+        <Footer navigationLinks={navigationLinks}/>
         </Box>
     );
 };
