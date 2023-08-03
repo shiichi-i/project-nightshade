@@ -175,9 +175,9 @@ const About = () => {
             <Text m="36px">
               It all started in 2013 when the founding members of the
               Programmers’ Den saw potential of having a skill focused student
-              organization. Since then, we have been the top performers and
-              competitors for the College of Computer Studies and even the
-              University in IT and development.
+              organization. The organization and all our members have shaped us
+              to become the top performers and competitors for the College of
+              Computer Studies and even the University in IT and development.
             </Text>
             <Text mx="36px">
               Since then, the organization has continued to grow into what it is

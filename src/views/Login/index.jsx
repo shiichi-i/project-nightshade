@@ -45,7 +45,7 @@ const Login = () => {
                             
                             {/**FORM CONTENT */}
                             <Box m="20px">
-                                <Text as="b" fontSize="35px" textColor="green.300">MEMBER LOGIN</Text>
+                                <Text as="b" fontSize="35px" textColor="green.300">LOGIN</Text>
                                 <Box m="20px" mt="70px">
                                     <FormControl>
                                         <SimpleGrid spacing={8}>
