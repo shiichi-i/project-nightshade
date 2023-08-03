@@ -14,7 +14,7 @@ const dummyData = [
         name: 'Juan Dela Cruz',
         course: 'BS Information Technology',
         date: 'TUE',
-        division: 'Main',
+        division: 'Mutltimedia',
     },
     {
         studentNo: '22642069',
@@ -183,7 +183,7 @@ const Admin = () => {
                             <Tr key={data.studentNo}>
                                 <Td textColor="white">{data.studentNo}</Td>
                                 <Td textColor="white">{data.name}</Td>
-                                <Td textColor="white">{data.name}</Td>
+                                <Td textColor="white">{data.course}</Td>
                                 <Td textColor="white">{data.date}</Td>
                                 <Td textColor="white">{data.division}</Td>
                                 <Td>
