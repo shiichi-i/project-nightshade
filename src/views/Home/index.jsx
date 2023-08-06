@@ -4,6 +4,7 @@ import {
     Image,
     Button,
     Heading,
+    SimpleGrid,
  } from "@chakra-ui/react";
  import { motion } from 'framer-motion';
 
@@ -15,8 +16,9 @@ import Star from '../../assets/star.png';
 import Star2 from '../../assets/Star 2.png';
 import Purple from '../../assets/divider.png';
 import HeadPurple from '../../assets/Vector 15.png';
-import layerStyles from "../../styles/base/layerStyles";
 import Rectangle from '../../assets/Rectangle 56.png';
+import Marketing from './Marketing';
+
 
 const Home = () => {
     return(
@@ -141,7 +143,7 @@ const Home = () => {
             </Box>
             {/*PUTTING THE CURVED DESIGN IN THE PAGE*/}
             <Image src={HeadPurple} w="full" mt={{base: '-25px', md: '-10px'}} />
-            <Box w="90vw" h="500px" display="flex" flexDir={{base: 'column', md: 'row-reverse'}} >
+            <Box w="90vw" h="500px" display="flex" flexDir={{base: 'column', md: 'row-reverse'}} mb={{base:'0px',md:'-100px'}}>
                 {/*PLACEHOLDER FOR THE PROJECT SHOWCASE*/}
                 <Box w={{base: '100%',md:'50%'}} h="full"
                     display="flex" alignItems="center" justifyContent="center"  position="relative" >
@@ -174,13 +176,31 @@ const Home = () => {
                              </Button>
                         </motion.div>
                     </Box>
-                            
                 </Box>
             </Box>
             </Box>
-            
-            
 
+            {/*Marketing */}
+            <Box w="90vw" h={{base: 'full',md:"120vh"}} display="flex" flexDirection={{base: 'column'}}alignItems={{base:'center', lg:'center'}}>
+                <Box w="90vw" h={{base:'full',lg:"500px"}} display="flex" alignItems='center' justifyContent='center' position='relative'mb={{base:'10px', lg:'-70px'}}>
+                    <SimpleGrid columns={{base:1,lg:3}} spacing={'20px'}>
+                        <Marketing/>
+                        <Marketing/>
+                        <Marketing/>
+                    </SimpleGrid>
+                </Box>
+                <Box alignItems={{base:'center', md:'flex-end'}} layerStyle="bubblegum" w={{base:'200px',lg:"400px"}} h={{base:'48px',lg:"60px"}} borderRadius="40px" mt={{base:'10px', md:'-150px',lg:'0px'}} ml={{base:'12px', lg:'480px'}} >
+                         <motion.div
+                        whileHover={{ scale: 1.2 }}
+                            whileTap={{ scale: 1.5 }}>
+                            <Button bg="rgb(18,198,176)" _hover={{bg:'transparet'}} w={{base:'200px',lg:"400px"}} h={{base:'48px',lg:"60px"}} borderRadius="40px">
+                                <Text pt={{base:'5px',lg:'10px'}} fontSize={{base:'14px',lg:'25px'}}>MORE ABOUT US &gt;</Text>
+                             </Button>
+                        </motion.div>
+                    </Box>
+            </Box>
+            <Box w="90vw" h="100px" display="flex" flexDir={{base: 'column', md: 'row-reverse'}} mb={{base:'0px',md:'-100px'}}>
+            </Box>
         </Box>
     );
 };
