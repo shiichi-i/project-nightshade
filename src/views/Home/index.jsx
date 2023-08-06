@@ -17,7 +17,10 @@ import Star2 from '../../assets/Star 2.png';
 import Purple from '../../assets/divider.png';
 import HeadPurple from '../../assets/Vector 15.png';
 import Rectangle from '../../assets/Rectangle 56.png';
-import Marketing from './Marketing';
+import Marketing from "./Marketing";
+import Case from '../../assets/briefcase.png';
+import Human from '../../assets/human_figure.png';
+import Chip from '../../assets/chip.png';
 
 
 const Home = () => {
@@ -89,7 +92,7 @@ const Home = () => {
                             <motion.div
                             whileHover={{ scale: 1.2 }}
                             whileTap={{ scale: 1.5 }}>
-                                <Button bg="transparent" _hover={{bg:'#9348FB'}} w="200px" h="48px" borderRadius="40px">
+                                <Button bgGradient="linear(to-l,rgb(97,233,216),rgb(146,72,251))" _hover={{bg:'transparet'}} w="200px" h="48px" borderRadius="40px">
                                     <Text fontSize="14px">BECOME A MEMBER</Text>
                                 </Button>
                             </motion.div>
@@ -113,10 +116,20 @@ const Home = () => {
                         
                         <Box position="absolute" h="full" display="flex" alignItems="center" justifyContent="center" mr={0}>
                             <Box position="absolute" top={{base:'-5px',sm: '-30px', md: '60px',lg:'-20px'}} left={{base:'-50px', md: '-50px',lg:'-60px'}}  zIndex={200}>
-                                <Image src={Star2} w={{base: '80px',sm:'90px', lg: '120px'}} />
+                                <motion.div
+                                animate={{ rotate: [0, 359] }}
+                                transition={{ duration: 8, repeat: Infinity }}
+                                >
+                                    <Image src={Star2} w={{base: '80px',sm:'90px', lg: '120px'}} />
+                                </motion.div>
                             </Box>
                             <Box mr='0' position="absolute" bottom={{base:'-5px',sm:'-30px', md: '70px',lg:'-15px'}} right={{base: '-50px', md: '-50px',lg:"-60px"}} zIndex={200}>
-                                <Image src={Star} w={{base: '80px',sm:'90px', lg: '120px'}} />
+                                <motion.div
+                                animate={{ rotate: [0, 359] }}
+                                transition={{ duration: 8, repeat: Infinity }}
+                                >
+                                    <Image src={Star} w={{base: '80px',sm:'90px', lg: '120px'}} />
+                                </motion.div>
                             </Box>
                             <Box  zIndex={201}>
                                 <Image src={Rectangle} w={{base:'200px',sm:'250px', md:"350px",lg:"420px"}}/>
@@ -167,11 +180,11 @@ const Home = () => {
                         </Text>
                     </Box>
                     {/*BUTTON FOR VIEW THE PROJECT*/}
-                    <Box layerStyle="bubblegum" w="200px" h="48px" borderRadius="40px">
+                    <Box layerStyle="seafoam" w="200px" h="48px" borderRadius="40px">
                          <motion.div
                         whileHover={{ scale: 1.2 }}
                             whileTap={{ scale: 1.5 }}>
-                            <Button bg="rgb(18,198,176)" _hover={{bg:'transparet'}} w="200px" h="48px" borderRadius="40px">
+                            <Button bgGradient="linear(to-l,rgb(18, 198,176),rgb(90,227,153))" _hover={{bg:'transparet'}} w="200px" h="48px" borderRadius="40px">
                                 <Text fontSize="14px">VIEW PROJECT</Text>
                              </Button>
                         </motion.div>
@@ -184,17 +197,29 @@ const Home = () => {
             <Box w="90vw" h={{base: 'full',md:"120vh"}} display="flex" flexDirection={{base: 'column'}}alignItems={{base:'center', lg:'center'}}>
                 <Box w="90vw" h={{base:'full',lg:"500px"}} display="flex" alignItems='center' justifyContent='center' position='relative'mb={{base:'10px', lg:'-70px'}}>
                     <SimpleGrid columns={{base:1,lg:3}} spacing={'20px'}>
-                        <Marketing/>
-                        <Marketing/>
-                        <Marketing/>
+                        <Marketing 
+                        icon={Case}
+                        heading='GET INDUSTRY EXPERIENCE'
+                        text='Learn how professionals in the industry work and prepare 
+                        yourself as Programmers’ Den operates under industry standards'/>
+                        <Marketing
+                        icon={Human}
+                        heading='COLLABORATE WITH SENIOR PROGRAMMERS'
+                        text='Get trained by your mentors and learn to 
+                        manage projects with other skilled members'/>
+                        <Marketing
+                        icon={Chip}
+                        heading='USE AI TECHNOLOGY'
+                        text='We see AI as a tool to improve and innovate. 
+                        Learn how to use modern technologies like AI to become a better programmer'/>
                     </SimpleGrid>
                 </Box>
-                <Box alignItems={{base:'center', md:'flex-end'}} layerStyle="bubblegum" w={{base:'200px',lg:"400px"}} h={{base:'48px',lg:"60px"}} borderRadius="40px" mt={{base:'10px', md:'-150px',lg:'0px'}} ml={{base:'12px', lg:'480px'}} >
+                <Box alignItems={{base:'center', md:'flex-end'}} layerStyle="afton" w={{base:'200px',lg:"400px"}} h={{base:'48px',lg:"60px"}} borderRadius="40px" mt={{base:'10px', md:'-150px',lg:'0px'}} ml={{base:'12px', lg:'480px'}} >
                          <motion.div
                         whileHover={{ scale: 1.2 }}
                             whileTap={{ scale: 1.5 }}>
-                            <Button bg="rgb(18,198,176)" _hover={{bg:'transparet'}} w={{base:'200px',lg:"400px"}} h={{base:'48px',lg:"60px"}} borderRadius="40px">
-                                <Text pt={{base:'5px',lg:'10px'}} fontSize={{base:'14px',lg:'25px'}}>MORE ABOUT US &gt;</Text>
+                            <Button bgGradient="linear(to-r,rgb(186,85,227),rgb(151,71,225))"_hover={{bg:'transparet'}} w={{base:'200px',lg:"400px"}} h={{base:'48px',lg:"60px"}} borderRadius="40px">
+                                <Text pt={{base:'5px',lg:'8px'}} fontSize={{base:'14px',lg:'25px'}}>MORE ABOUT US &gt;</Text>
                              </Button>
                         </motion.div>
                     </Box>
