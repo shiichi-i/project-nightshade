@@ -218,6 +218,8 @@ const Home = () => {
                          <motion.div
                         whileHover={{ scale: 1.2 }}
                             whileTap={{ scale: 1.5 }}>
+                            <Button bg="transparent" _hover={{bg:'#9348FB'}} w={{base:'200px',lg:"400px"}} h={{base:'48px',lg:"60px"}} borderRadius="40px">
+                                <Text pt={{base:'5px',lg:'8px'}} fontSize={{base:'14px',lg:'25px'}}>MORE ABOUT US &gt;</Text>
                             <Button bgGradient="linear(to-r,rgb(186,85,227),rgb(151,71,225))"_hover={{bg:'transparet'}} w={{base:'200px',lg:"400px"}} h={{base:'48px',lg:"60px"}} borderRadius="40px">
                                 <Text pt={{base:'5px',lg:'8px'}} fontSize={{base:'14px',lg:'25px'}}>MORE ABOUT US &gt;</Text>
                              </Button>
