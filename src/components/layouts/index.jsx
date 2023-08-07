@@ -2,7 +2,7 @@ import { Box } from '@chakra-ui/react';
 
 // Components
 import NavBar from './NavBar';
-//import Footer from './Footer';
+import Footer from './Footer';
 
 const navigationLinks = [
     {
@@ -26,7 +26,7 @@ const DefaultLayout = ({ children }) => {
         <Box w="100vw" h="100vh">
 
           <Box w="inherit" h="inherit" zIndex="-1" pos="fixed" bgGradient="linear(to-tl, #bc1eac25 5%, #16142b20 50%)" />
-          <Box w="inherit" h="inherit" zIndex="-2" pos="fixed" right="50px" bgGradient="radial(#223337 15%, #16142b 80%)" />
+          <Box w="inherit" h="inherit" zIndex="-2" pos="fixed" bgGradient="radial(#223337 15%, #16142b 80%)" />
 
           <NavBar navigationLinks={navigationLinks}/>
 
@@ -38,7 +38,7 @@ const DefaultLayout = ({ children }) => {
 
           
 
-        {/**<Footer />*/}
+        <Footer navigationLinks={navigationLinks}/>
         </Box>
     );
 };

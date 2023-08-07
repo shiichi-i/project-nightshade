@@ -59,6 +59,7 @@ const NavBar = ({ navigationLinks = [] }) => {
                     <Box display={{base: 'none', md: 'flex'}} flexDir="row" position="absolute" right="5">
                     {navigationLinks.map((link) => (
                         <motion.div
+                        key={link.label}
                         whileHover={{
                             marginTop: "10px",
                             scale: 1.1,
