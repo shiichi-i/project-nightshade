@@ -11,6 +11,7 @@ import IconChatgpt from "../../assets/icon-chatgpt.png";
 import ProgdenMembers from "../../assets/progden-members.png";
 import Logo from "../../assets/logo_green.png";
 import OldLogos from "../../assets/old_logos.png";
+import { useNavigate } from "react-router-dom";
 
 const Icons = [
   {
@@ -36,6 +37,9 @@ const Icons = [
 ];
 
 const About = () => {
+
+  const nav = useNavigate();
+  
   return (
     <Box>
       <motion.div
@@ -210,6 +214,7 @@ const About = () => {
             border="solid 2px"
             borderColor="midnight"
             textColor="midnight"
+            onClick={()=>{nav("/perks"); window.scrollTo(0,0)}}
           >
             Membership Perks
           </Button>
@@ -219,6 +224,7 @@ const About = () => {
               bg="transparent"
               textColor="white"
               boxShadow="lg"
+              onClick={()=>{nav("/join"); window.scrollTo(0,0)}}
             >
               Sign Up &gt;
             </Button>

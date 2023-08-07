@@ -1,4 +1,5 @@
-import { Box, Heading, Text, Image, Flex, Button, Spacer, Center } from "@chakra-ui/react";
+import { Box, Heading, Text, Image, Flex, Button } from "@chakra-ui/react";
+import { motion } from "framer-motion";
 
 //Images
 import Banner from "../../assets/perks_banner.png";
@@ -7,25 +8,53 @@ import Merch from "../../assets/merch_perks.png";
 import Portfolio from "../../assets/portfolio_perks.png";
 import Games from "../../assets/work_play.png";
 import Curve from "../../assets/perks_curve.png";
+import { useNavigate } from "react-router-dom";
 
 const Perks = () => {
+
+  const nav = useNavigate();
+
   return (
     <Flex>
       <Flex flexDirection="column" alignItems={"center"} w={"100%"}>
         {/**Header */}
+        
         <Box display="flex" flexDir={{base: 'column-reverse', sm: 'row'}} bg={"#9848FF"} w={"full"} alignItems={"center"}>
 
+         
+          
             <Box m="24px" w={{base: '100%', sm: '75%'}} ml={{base: '0', lg: '8vw' }}>
+            <motion.div
+            animate={{
+              y: [-10,0],
+              opacity: [0,1]
+            }}
+            transition={{
+              duration: 0.8
+            }}>
               <Heading textAlign="center">
                 SIGN UP FOR EXCLUSIVE MEMBERSHIP PERKS
               </Heading>
+              </motion.div>
             </Box>
 
+            
               <Box display="flex" justifyContent="flex-end" h="100%">
-                <Image w={{base: '100%', lg: '450px'}} src={Banner} />
+              <motion.div
+              animate={{
+                y: [-10,0],
+                opacity: [0,1]
+              }}
+              transition={{
+                duration: 0.8
+              }}>
+                <Image w={{base: '100%', lg: '450px'}}  src={Banner} />
+                </motion.div>
               </Box>
-
+              
         </Box>
+        
+
 
         <Flex w={"76vw"}  justifyContent={"center"} alignItems={"center"}>
           <Flex borderRadius="35px" layerStyle={"bubblegum"} maxW="950px" mt="20" p={{base: '5', md: '0'}}>
@@ -47,6 +76,12 @@ const Perks = () => {
           </Flex>
         </Flex>
 
+        <motion.div
+        initial={{ opacity: 0, y: -10, scale: 0.5 }}
+        whileInView={{ opacity: 1, y: 0, scale: 1  }}
+        transition={{ duration: 0.5 }}
+        viewport={{ once: true, amount: 0.8 }}
+      >
         <Flex w={"76vw"}  justifyContent={"center"} alignItems={"center"}  maxW="950px">
           <Flex flexDir={"column"} >
             <Flex mt="6" flexDir={{ base: "column", md: "row" }} justifyContent={"center"}>
@@ -97,42 +132,83 @@ const Perks = () => {
             </Flex>
           </Flex>
         </Flex>
+        </motion.div>
 
-        <Flex w={"full"} flexDir={"column"}>
+       
+        <Flex w="100%" flexDir={"column"}>
           <Image src={Curve} />
-          <Flex bg={"#11C6B0"} flexDir={"column"} justifyContent={"center"} alignItems={"center"} w={"full"}>
-            <Heading color="darkBlue" mb="5">WORK HARD. PLAY HARD.</Heading>
-            <Flex w={"100%"}>
-              <Image src={Games} w={"100%"} />
-            </Flex>
-            <Flex justifyContent="center" m="4">
-            <Box w={{base: '80%', lg: '50%'}}>
-              <Text color="darkBlue" textAlign={"center"}>
-                Celebrate gaming as a platform. Engage in exciting organization Team Building activities that sprout teamwork and healthy competition.
-              </Text>
+          <Flex bg={"#11C6B0"}>
+            <Box w="full" display="flex" flexDir={"column"} justifyContent={"center"} alignItems={"center"}>
+            <motion.div
+                  initial={{ opacity: 0, scale: 0  }}
+                  whileInView={{ opacity: 1 , scale: 1 }}
+                  transition={{ duration: 0.5 }}
+                  viewport={{ once: true, amount: 0.8 }}>
+              <Heading color="darkBlue" mb="5">WORK HARD. PLAY HARD.</Heading>
+              </motion.div>
+              <Flex w={"100%"}>
+                
+                <Image src={Games} w={"100%"} />
+              </Flex>
+              <Flex justifyContent="center" m="4">
+              <Box w={{base: '80%', lg: '50%'}}>
+                <Text color="darkBlue" textAlign={"center"}>
+                  Celebrate gaming as a platform. Engage in exciting organization Team Building activities that sprout teamwork and healthy competition.
+                </Text>
+              </Box>
+              </Flex>
             </Box>
-            </Flex>
           </Flex>
         </Flex>
+        
+        
 
-        <Flex w={"full"} padding={"30px"} justifyContent={"center"}>
-          <Flex flexDir={"column"} alignItems={"center"}>
-            <Heading>BECOME A MEMBER TODAY</Heading>
-            <Spacer />
-            <Flex flexDir={"row"} padding={"15px"}>
-              <Flex>
-                <Button variant={"outline"} color={"#5AE399"} colorScheme={"#5AE399"} borderRadius={"30px"} margin={"15px"}>
-                  About Us
-                </Button>
-              </Flex>
-              <Flex>
-                <Button layerStyle={"seafoam"} borderRadius={"30px"} margin={"15px"} vw={"266px"}>
-                  Sign Up &gt;{" "}
-                </Button>
-              </Flex>
-            </Flex>
-          </Flex>
-        </Flex>
+
+        <Box
+        w="full"
+        h="250px"
+        align="middle"
+        display="flex"
+        flexDir="column"
+        justifyContent="center"
+        alignItems="center"
+      >
+         <motion.div
+                  initial={{ opacity: 0  }}
+                  whileInView={{ opacity: 1  }}
+                  transition={{ duration: 0.5 }}
+                  viewport={{ once: true, amount: 0.8 }}>
+        <Heading layerStyle="seafoam" backgroundClip="text" as="b">
+          BECOME A MEMBER TODAY
+        </Heading>
+        <Box display="flex" flexDir="row" w="full" justifyContent="center">
+          <Button
+            w="150px"
+            m="8px"
+            borderRadius="20px"
+            bg="transparent"
+            border="solid 2px"
+            borderColor="secondary"
+            textColor="secondary"
+            onClick={()=>{nav("/about"); window.scrollTo(0,0)}}
+          >
+            About Us
+          </Button>
+          <Box m="8px" borderRadius="20px" layerStyle="seafoam">
+            <Button
+              w="150px"
+              borderRadius="20px"
+              bg="transparent"
+              textColor="darkBlue"
+              boxShadow="lg"
+              onClick={()=>{nav("/join"); window.scrollTo(0,0)}}
+            >
+              Sign Up &gt;
+            </Button>
+          </Box>
+        </Box>
+        </motion.div>
+      </Box>
       </Flex>
     </Flex>
   );

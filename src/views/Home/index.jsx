@@ -197,7 +197,7 @@ const Home = () => {
             </Box>
 
             {/*Marketing */}
-            <Box display="flex" flexDir="column" h="200px" alignItems="center">
+            <Box display="flex" flexDir="column" mb="8" alignItems="center">
                 <Box display="flex" alignItems='center' justifyContent='center'>
                     <SimpleGrid columns={{base:1,md:3}} spacing={{base: '20px', lg: '48px'}}>
                         <Marketing 
@@ -230,8 +230,6 @@ const Home = () => {
                             </motion.div>
                     </Box>
                 </Box>
-            </Box>
-            <Box w="90vw" h="100px" display="flex" flexDir={{base: 'column', md: 'row-reverse'}} mb={{base:'0px',md:'-100px'}}>
             </Box>
         </Box>
     );
