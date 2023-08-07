@@ -2,36 +2,38 @@ import React from "react";
 import { 
   Box,
   Text,
-  Image,
   Heading,
+  Icon,
 } from "@chakra-ui/react";
-import Eclipse from '../../assets/Ellipse 4.png';
+
 
 
 const Marketing = (props)=>{
   return (
-    <Box w='275px' h='300px'>
-      <Box position='absolute' w='275px' h='300px' layerStyle='afton' borderRadius='30px'>
-        <Box display='flex' flexDir='column' w='100%' h='300px' layerStyle='seafoam' borderRadius='35px' position='absolute'
-        left='4px' top='-4px'>
-            <Box display='flex' justifyContent='center' w='full' h='92px' mt='10px'>
-               
-                <Image src={Eclipse} w='92px' h='full'/>
-                <Box position='absolute'w='full' h='92px' display='flex' alignItems='center' justifyContent='center'>
-                  <Image src={props.icon} w='50px' h='50px'/>
+    <Box>
+      <Box display="flex" w={{base: '60vw', md: '25vw'}} h='350px' justifyContent="center" alignItems="center" pos="relative">
+
+      <Box position="absolute" w={{base: '60vw', md: '25vw'}} h='350px' layerStyle='afton' borderRadius='30px' bottom="-5px" left="-5px" />
+
+        <Box position="absolute" layerStyle="seafoam" h='350px' w={{base: '60vw', md: '25vw'}} borderRadius="30px" >
+            <Box display='flex' justifyContent='center' w='full' mt='10px' borderRadius='35px'>
+              
+                <Box bg="darkBlue" borderRadius="50%" w="70px" h="70px" m="8px"
+                display='flex' alignItems='center' justifyContent='center'>
+                    <Icon as={props.icon} boxSize={8} color="secondary" />
                 </Box>
             </Box>
-             <Box w='100%' h='full' mt='3px' display='flex' flexDirection='column' alignItems='center'>
-                 <Box w='233px' h='39px' display='flex' alignItems='center' justifyContent='center' textAlign='center'>
-                <Heading fontSize='19px' color='rgb(22,20,43)'>{props.heading}</Heading>
+            <Box w='100%' h='full' mt='8px' display='flex' flexDirection='column' alignItems='center'>
+                <Box display='flex' alignItems='center' justifyContent='center' textAlign='center'>
+                <Heading fontSize='18px' color='darkBlue' m="8px">{props.heading}</Heading>
                 </Box>
 
-                <Box w='265px' h='64px' textAlign='center' mt='20px'>
-                    <Text fontSize='14px' color='rgb(22,20,43)'>{props.text}</Text>
+                <Box h='64px' m="18px" textAlign='center' mt='24px'>
+                    <Text fontSize='16px' color='rgb(22,20,43)'>{props.text}</Text>
                 </Box>
             </Box>
-        </Box> 
-    </Box>
+          </Box>
+        </Box>
     </Box>
     
   );

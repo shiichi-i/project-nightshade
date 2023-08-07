@@ -7,6 +7,7 @@ import {
     SimpleGrid,
  } from "@chakra-ui/react";
  import { motion } from 'framer-motion';
+ import { FiBriefcase, FiUsers, FiCpu } from 'react-icons/fi'
 
  //Images
 import Banner from '../../assets/pd_banner.png';
@@ -17,7 +18,9 @@ import Star2 from '../../assets/Star 2.png';
 import Purple from '../../assets/divider.png';
 import HeadPurple from '../../assets/Vector 15.png';
 import Rectangle from '../../assets/Rectangle 56.png';
+
 import Marketing from "./Marketing";
+
 import Case from '../../assets/briefcase.png';
 import Human from '../../assets/human_figure.png';
 import Chip from '../../assets/chip.png';
@@ -194,36 +197,39 @@ const Home = () => {
             </Box>
 
             {/*Marketing */}
-            <Box w="90vw" h={{base: 'full',md:"120vh"}} display="flex" flexDirection={{base: 'column'}}alignItems={{base:'center', lg:'center'}}>
-                <Box w="90vw" h={{base:'full',lg:"500px"}} display="flex" alignItems='center' justifyContent='center' position='relative'mb={{base:'10px', lg:'-70px'}}>
-                    <SimpleGrid columns={{base:1,lg:3}} spacing={'20px'}>
+            <Box display="flex" flexDir="column" h="200px" alignItems="center">
+                <Box display="flex" alignItems='center' justifyContent='center'>
+                    <SimpleGrid columns={{base:1,md:3}} spacing={{base: '20px', lg: '48px'}}>
                         <Marketing 
-                        icon={Case}
+                        icon={FiBriefcase}
                         heading='GET INDUSTRY EXPERIENCE'
                         text='Learn how professionals in the industry work and prepare 
                         yourself as Programmers’ Den operates under industry standards'/>
                         <Marketing
-                        icon={Human}
+                        icon={FiUsers}
                         heading='COLLABORATE WITH SENIOR PROGRAMMERS'
                         text='Get trained by your mentors and learn to 
-                        manage projects with other skilled members'/>
+                        manage projects with otherkilled members'/>
                         <Marketing
-                        icon={Chip}
+                        icon={FiCpu}
                         heading='USE AI TECHNOLOGY'
                         text='We see AI as a tool to improve and innovate. 
                         Learn how to use modern technologies like AI to become a better programmer'/>
-                    </SimpleGrid>
+                        
+                        </SimpleGrid>
                 </Box>
-                <Box alignItems={{base:'center', md:'flex-end'}} layerStyle="afton" w={{base:'200px',lg:"400px"}} h={{base:'48px',lg:"60px"}} borderRadius="40px" mt={{base:'10px', md:'-150px',lg:'0px'}} ml={{base:'12px', lg:'480px'}} >
-                         <motion.div
-                        whileHover={{ scale: 1.2 }}
-                            whileTap={{ scale: 1.5 }}>
-                            
-                            <Button bgGradient="linear(to-r,rgb(186,85,227),rgb(151,71,225))"_hover={{bg:'transparet'}} w={{base:'200px',lg:"400px"}} h={{base:'48px',lg:"60px"}} borderRadius="40px">
-                                <Text pt={{base:'5px',lg:'8px'}} fontSize={{base:'14px',lg:'25px'}}>MORE ABOUT US &gt;</Text>
-                             </Button>
-                        </motion.div>
+                <Box m="24px" w="full"  display="flex" justifyContent={{base: 'center', md: 'flex-end'}}>
+                    <Box w={{base:'200px',lg:"400px"}}>
+                            <motion.div
+                                whileHover={{ scale: 1.05 }}
+                                whileTap={{ scale: 1.0 }}>
+                                
+                                <Button bg="midnight" _hover={{ layerStyle: 'afton'}} w={{base:'200px',lg:"400px"}} h={{base:'48px',lg:"60px"}} borderRadius="40px">
+                                    <Text pt={{base:'5px',lg:'8px'}} fontSize={{base:'14px',lg:'25px'}}>MORE ABOUT US &gt;</Text>
+                                </Button>
+                            </motion.div>
                     </Box>
+                </Box>
             </Box>
             <Box w="90vw" h="100px" display="flex" flexDir={{base: 'column', md: 'row-reverse'}} mb={{base:'0px',md:'-100px'}}>
             </Box>
