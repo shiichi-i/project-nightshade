@@ -122,6 +122,7 @@ const Footer = ({ navigationLinks = [] }) => {
                     <a
                       href="https://www.facebook.com/ccsprogrammersden"
                       target="_blank"
+                      rel="noreferrer"
                     >
                       <Button
                         variant="link"

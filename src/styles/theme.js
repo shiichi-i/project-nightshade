@@ -8,6 +8,8 @@ import layerStyles from './base/layerStyles';
 //Components
 import Text from './components/Text';
 import Heading from './components/Heading';
+import Input from './components/Input';
+import Select from './components/Select';
 
 
 const config = {
@@ -32,6 +34,8 @@ const styles = {
     components: {
         Text,
         Heading,
+        Input,
+        Select
       },
   });
   

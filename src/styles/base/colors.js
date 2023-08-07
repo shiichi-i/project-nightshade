@@ -5,6 +5,7 @@ const colors = {
     dashed: '#b9b9bc',
     darkBlue: '#16142B',
     midnight: '#BA55E3',
+    miku: '#59E5D9',
   };
   
   export default colors;

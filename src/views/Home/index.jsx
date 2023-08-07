@@ -20,13 +20,13 @@ import HeadPurple from '../../assets/Vector 15.png';
 import Rectangle from '../../assets/Rectangle 56.png';
 
 import Marketing from "./Marketing";
-
-import Case from '../../assets/briefcase.png';
-import Human from '../../assets/human_figure.png';
-import Chip from '../../assets/chip.png';
+import { useNavigate } from "react-router-dom";
 
 
 const Home = () => {
+
+    const nav = useNavigate();
+
     return(
         <Box display="flex" w="full" justifyContent="center" alignItems="center" flexDir="column" >
             
@@ -95,7 +95,7 @@ const Home = () => {
                             <motion.div
                             whileHover={{ scale: 1.2 }}
                             whileTap={{ scale: 1.5 }}>
-                                <Button bgGradient="linear(to-l,rgb(97,233,216),rgb(146,72,251))" _hover={{bg:'transparet'}} w="200px" h="48px" borderRadius="40px">
+                                <Button bgGradient="linear(to-l,rgb(97,233,216),rgb(146,72,251))" _hover={{bg:'transparet'}} w="200px" h="48px" borderRadius="40px" onClick={()=>nav("/join")}>
                                     <Text fontSize="14px">BECOME A MEMBER</Text>
                                 </Button>
                             </motion.div>
@@ -197,7 +197,7 @@ const Home = () => {
             </Box>
 
             {/*Marketing */}
-            <Box display="flex" flexDir="column" h="200px" alignItems="center">
+            <Box display="flex" flexDir="column" alignItems="center" m={8}>
                 <Box display="flex" alignItems='center' justifyContent='center'>
                     <SimpleGrid columns={{base:1,md:3}} spacing={{base: '20px', lg: '48px'}}>
                         <Marketing 
@@ -218,7 +218,7 @@ const Home = () => {
                         
                         </SimpleGrid>
                 </Box>
-                <Box m="24px" w="full"  display="flex" justifyContent={{base: 'center', md: 'flex-end'}}>
+                <Box m={8} w="full"  display="flex" justifyContent={{base: 'center', md: 'flex-end'}}>
                     <Box w={{base:'200px',lg:"400px"}}>
                             <motion.div
                                 whileHover={{ scale: 1.05 }}
@@ -230,8 +230,6 @@ const Home = () => {
                             </motion.div>
                     </Box>
                 </Box>
-            </Box>
-            <Box w="90vw" h="100px" display="flex" flexDir={{base: 'column', md: 'row-reverse'}} mb={{base:'0px',md:'-100px'}}>
             </Box>
         </Box>
     );
