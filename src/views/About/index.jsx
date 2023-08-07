@@ -224,7 +224,7 @@ const About = () => {
               bg="transparent"
               textColor="white"
               boxShadow="lg"
-              onClick={()=>{nav("/join"); window.scrollTo(0,0)}}
+              onClick={()=>{nav("/join"); window.scrollTo(0, 0);}}
             >
               Sign Up &gt;
             </Button>
