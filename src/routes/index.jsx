@@ -3,8 +3,14 @@ import { Routes, Route } from 'react-router-dom';
 import Main from '../views';
 import Login from '../views/Login';
 
+//
 import Home from '../views/Home';
 import About from '../views/About';
+
+import Join from '../views/Join';
+//
+
+
 import Events from '../views/Events';
 import Members from '../views/Members';
 import MemberList from '../views/Members/memberList';
@@ -31,6 +37,8 @@ const AppRoutes = () => {
         <Route path="/" element={<Main />}>
           <Route path="" element={<Home />} />
           <Route path="about" element={<About />} />
+          <Route path="join" element={<Join />} />
+
           <Route path="events" element={<Events />} />
 
           <Route path="members" element={<Members />}>
