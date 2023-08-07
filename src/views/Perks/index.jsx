@@ -10,30 +10,32 @@ import Curve from "../../assets/perks_curve.png";
 
 const Perks = () => {
   return (
-    <Flex w={"100%"} h={"full"}>
-      <Flex flexDirection={"column"} alignItems={"center"} w={"100%"} h={"372px"} padding={"15px 0px"}>
+    <Flex>
+      <Flex flexDirection="column" alignItems={"center"} w={"100%"}>
         {/**Header */}
-        <Flex bg={"#9848FF"} w={"full"} alignItems={"center"} justifyContent={"flex-end"} gap={"150"}>
-          <Flex>
-            <Heading noOfLines={"2"} maxW={"600px"} textAlign={"center"}>
-              SIGN UP FOR EXCLUSIVE MEMBERSHIP PERKS
-            </Heading>
-          </Flex>
+        <Box display="flex" flexDir={{base: 'column-reverse', sm: 'row'}} bg={"#9848FF"} w={"full"} alignItems={"center"}>
 
-          <Flex>
-            <Image w={"608px"} h={"100%"} src={Banner} />
-          </Flex>
-        </Flex>
+            <Box m="24px" w={{base: '100%', sm: '75%'}} ml={{base: '0', lg: '8vw' }}>
+              <Heading textAlign="center">
+                SIGN UP FOR EXCLUSIVE MEMBERSHIP PERKS
+              </Heading>
+            </Box>
 
-        <Flex w={"76vw"} flexDir={"row"} justifyContent={"center"} alignItems={"center"}>
-          <Flex bg={"#9848FF"} borderRadius={"15px"} layerStyle={"bubblegum"} margin={"15px"}>
+              <Box display="flex" justifyContent="flex-end" h="100%">
+                <Image w={{base: '100%', lg: '450px'}} src={Banner} />
+              </Box>
+
+        </Box>
+
+        <Flex w={"76vw"}  justifyContent={"center"} alignItems={"center"}>
+          <Flex borderRadius="35px" layerStyle={"bubblegum"} maxW="950px" mt="20" p={{base: '5', md: '0'}}>
             {/**Join Competition */}
-            <Flex flexDirection={"row"} flexWrap={"wrap"} justifyContent={"center"} alignItems={"center"}>
-              <Flex flexDir={"column"} alignItems={"center"} margin={"15px"}>
-                <Heading textAlign={"center"} color={"black"} noOfLines={"2"} maxW={"400px"} padding={"15px"}>
+            <Flex flexDir={{base: 'column', md: 'row'}} justifyContent={"center"} alignItems={"center"}>
+              <Flex w={{base:'100%', md: '50%'}} flexDir="column" alignItems={"center"}>
+                <Heading textAlign={"center"} color="darkBlue" m="5">
                   JOIN COMPETITION AND EVENTS
                 </Heading>
-                <Text noOfLines={"6"} maxW={"300px"} padding={"15px"}>
+                <Text m="7">
                   Get offered more opportunities to participate in competitions and experience your college-life attending both National and
                   International events. As a member of the elite programmers, the College puts its faith in your skills.
                 </Text>
@@ -45,50 +47,53 @@ const Perks = () => {
           </Flex>
         </Flex>
 
-        <Flex flexDir={"column"}>
-          <Flex w={"full"} h={"full"} margin={"15px"} flexDir={{ base: "column", md: "row" }} justifyContent={"center"}>
-            {/**Merch */}
-            <Flex
-              layerStyle={"seafoam"}
-              borderRadius={"15px"}
-              flexDir={"column"}
-              justifyContent={"center"}
-              alignItems={"center"}
-              margin={"15px"}
-              padding={"15px"}
-            >
-              <Box>
-                <Heading textAlign={"center"} color={"black"} noOfLines={"2"} maxW={"500px"}>
-                  ENJOY EXCLUSIVE MERCHANDISE
-                </Heading>
-              </Box>
-              <Box>
-                <Image src={Merch} />
-              </Box>
-            </Flex>
-            {/**Portfolio */}
-            <Flex
-              layerStyle={"afton"}
-              borderRadius={"15px"}
-              flexDir={"column"}
-              justifyContent={"center"}
-              alignItems={"center"}
-              margin={"15px"}
-              padding={"15px"}
-            >
-              <Box>
-                <Image src={Portfolio} />
-              </Box>
-              <Box>
-                <Heading textAlign={"center"} color={"black"} noOfLines={"2"} maxW={"500px"}>
-                  BUILD YOUR WORK PORTFOLIO
-                </Heading>
-                <Flex justifyContent={"center"}>
-                  <Text noOfLines={"2"} maxW={"300px"} textAlign={"center"}>
-                    Be job ready. Work on projects to put on your portfolio as early as college
-                  </Text>
-                </Flex>
-              </Box>
+        <Flex w={"76vw"}  justifyContent={"center"} alignItems={"center"}  maxW="950px">
+          <Flex flexDir={"column"} >
+            <Flex mt="6" flexDir={{ base: "column", md: "row" }} justifyContent={"center"}>
+              {/**Merch */}
+              <Flex
+                layerStyle={"seafoam"}
+                borderRadius="35px"
+                flexDir={"column"}
+                justifyContent={"center"}
+                alignItems={"center"}
+                padding={"15px"}
+                mr={{base: '0', md: '3'}}
+              >
+                <Box>
+                  <Heading textAlign={"center"} color="darkBlue" m="5">
+                    ENJOY EXCLUSIVE MERCHANDISE
+                  </Heading>
+                </Box>
+                <Box>
+                  <Image src={Merch} />
+                </Box>
+              </Flex>
+              {/**Portfolio */}
+              <Flex
+                layerStyle={"afton"}
+                borderRadius="35px"
+                flexDir={"column"}
+                justifyContent={"center"}
+                alignItems={"center"}
+                padding={"15px"}
+                ml={{base: '0', md: '3'}}
+                mt={{base: '6', md: '0'}}
+              >
+                <Box>
+                  <Image src={Portfolio} />
+                </Box>
+                <Box>
+                  <Heading textAlign={"center"} color="darkBlue" m="4">
+                    BUILD YOUR WORK PORTFOLIO
+                  </Heading>
+                  <Flex justifyContent={"center"}>
+                    <Text textAlign={"center"} mx="6">
+                      Be job ready. Work on projects to put on your portfolio as early as college
+                    </Text>
+                  </Flex>
+                </Box>
+              </Flex>
             </Flex>
           </Flex>
         </Flex>
@@ -96,13 +101,17 @@ const Perks = () => {
         <Flex w={"full"} flexDir={"column"}>
           <Image src={Curve} />
           <Flex bg={"#11C6B0"} flexDir={"column"} justifyContent={"center"} alignItems={"center"} w={"full"}>
-            <Heading color={"black"}>WORK HARD. PLAY HARD.</Heading>
+            <Heading color="darkBlue" mb="5">WORK HARD. PLAY HARD.</Heading>
             <Flex w={"100%"}>
               <Image src={Games} w={"100%"} />
             </Flex>
-            <Text color={"black"} noOfLines={"2"} maxW={"600px"} textAlign={"center"}>
-              Celebrate gaming as a platform. Engage in exciting organization Team Building activities that sprout teamwork and healthy competition.
-            </Text>
+            <Flex justifyContent="center" m="4">
+            <Box w={{base: '80%', lg: '50%'}}>
+              <Text color="darkBlue" textAlign={"center"}>
+                Celebrate gaming as a platform. Engage in exciting organization Team Building activities that sprout teamwork and healthy competition.
+              </Text>
+            </Box>
+            </Flex>
           </Flex>
         </Flex>
 
