@@ -41,7 +41,7 @@ const NavBar = ({ navigationLinks = [] }) => {
                                 {link.label}
                             </Button>
                         ))}
-                        <Button w="80%" my="0.5" bg="blackAlpha.600" borderRadius="30px" textColor="white">
+                        <Button w="80%" my="0.5" bg="blackAlpha.600" borderRadius="30px" textColor="white" onClick={() => {navigate("/join"); setShow(false)}}>
                             Join our Team
                         </Button>
                         

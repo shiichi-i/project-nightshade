@@ -8,9 +8,9 @@ const Footer = ({ navigationLinks = [] }) => {
   const nav = useNavigate();
 
   return (
-    <Box mt="-40px" bgGradient="linear(to-tl, #9747FF, #BA55E3)" borderTopRadius="40">
+    <Box mt="-40px" bgGradient="linear(to-tl, #9747FF, #BA55E3)" borderTopRadius="40" pt="3">
       <Box w="full" h="40px" bottom="0" display="flex" alignItems="center">
-        <Image src={Banner} h="36px" ml="16px" />
+        <Image src={Banner} h="36px" ml="16px"/>
         <Box
           pos="absolute"
           right="16px"
