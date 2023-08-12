@@ -26,25 +26,12 @@ import SeaCurve from '../../assets/Vector 16.png';
 import BottomCurve from '../../assets/Vector 17.png';
 import Hiring from '../../assets/hiring.png';
 
-import meID from '../../assets/edit_PDID.png';
-import Project from '../../assets/proj.png';
 
 import Marketing from "./Marketing";
 import { useNavigate } from "react-router-dom";
 
-const featured =[
-    {
-        memberImg:`${meID}`,
-        member: 'Andrea Adalem',
-        memberDesc: 'Hi Im Andrea, everyones ate schi <3 mwamwa chupchup',
-        projectImg: `${Project}`,
-        projectDesc: 'A software for learning robotics using virtual environments',
-        projectLink: 'https://pebbles-robotics.web.app/',
-    }
-]
 
-
-const Home = () => {
+const Home = ({ featured = [] }) => {
 
     const nav = useNavigate();
 

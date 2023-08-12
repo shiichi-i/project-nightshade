@@ -1,6 +1,5 @@
 import {
   Box,
-  FormControl,
   VStack,
   Heading,
   Input,
@@ -10,9 +9,33 @@ import {
   List,
   OrderedList,
   ListItem,
+  FormErrorMessage,
+  FormControl,
 } from "@chakra-ui/react";
+import { Form, Formik, useFormik } from "formik";
+import { FormSchema } from '../../components/FormSchema';
+import { useNavigate } from "react-router-dom";
 
 const Join = () => {
+
+  const nav = useNavigate();
+
+  const {handleChange, values , handleSubmit, errors, touched} = useFormik({
+    initialValues: {
+      name: "",
+      studentNo: "",
+      course: "BSIT",
+      division: "Main",
+      date: "",
+    },
+    validationSchema: FormSchema,
+    onSubmit: (values) => {
+      console.log(values);
+      nav("/submit");
+      window.scrollTo(0,0);
+    },
+  })
+
   return (
     <Box>
       {/** CONTAINER FOR FORM (LG: RIGHT ALIGN)*/}
@@ -62,8 +85,9 @@ const Join = () => {
 
             <Box w="100%" h="950px" bg="darkBlue" borderBottomRadius="40px">
               {/** FORM */}
+              <Formik onSubmit={handleSubmit} initialValues={{name: "", studNo: "", course: ""}}>
+              <Form>
               <Box m="10">
-                <FormControl>
                   <VStack spacing={8}>
                     <Box w="full">
                       <Box display="flex">
@@ -74,8 +98,11 @@ const Join = () => {
                           *
                         </Text>
                       </Box>
-                      <Input placeholder="Surname, First Name, Middle Name, Suffix" />
+                        <Input border={errors.name && touched.name? "solid 2px red" : ""} name="name" placeholder="Surname, First Name, Middle Name, Suffix" value={values.name} onChange={handleChange}/>
+                        {errors.name && touched.name?<Text color="red">{errors.name}</Text>:""}
+
                     </Box>
+                    
 
                     <Box w="full">
                       <Box display="flex">
@@ -86,7 +113,8 @@ const Join = () => {
                           *
                         </Text>
                       </Box>
-                      <Input placeholder="ex. 202300111" />
+                      <Input border={errors.studentNo && touched.studentNo? "solid 2px red" : ""} name="studentNo" placeholder="ex. 202300111" value={values.studentNo} onChange={handleChange} />
+                      {errors.name && touched.name?<Text color="red">{errors.studentNo}</Text>:""}
                     </Box>
 
                     <Box w="full">
@@ -95,12 +123,12 @@ const Join = () => {
                           Course:
                         </Text>
                       </Box>
-                      <Select>
-                        <option value="option1">
+                      <Select name="course" value={values.course} onChange={handleChange}>
+                        <option value="BSIT">
                           BS Information Technology
                         </option>
-                        <option value="option2">BS Computer Science</option>
-                        <option value="option3">BS Information Systems</option>
+                        <option value="BSCS">BS Computer Science</option>
+                        <option value="BSIS">BS Information Systems</option>
                       </Select>
                     </Box>
 
@@ -113,12 +141,12 @@ const Join = () => {
                           *
                         </Text>
                       </Box>
-                      <Select bg="secondary">
-                        <option value="option1">
+                      <Select name="division" value={values.division} onChange={handleChange} bg={values.division=="Multimedia"? "midnight": "secondary"}>
+                        <option value="Main">
                           Main &#40; Web, App, Game Development & Competition
                           &#41;
                         </option>
-                        <option value="option2">
+                        <option value="Multimedia">
                           Multimedia &#40; Graphic Design, Digital Art, Video
                           Editing &#41;
                         </option>
@@ -131,11 +159,11 @@ const Join = () => {
                           Preffered Schedule:
                         </Text>
                       </Box>
-                      <Select placeholder=" ">
-                        <option value="option1">Tuesday</option>
-                        <option value="option2">Wednesday</option>
-                        <option value="option3">Thursday</option>
-                        <option value="option4">Friday</option>
+                      <Select placeholder=" " name="date" value={values.date} onChange={handleChange}>
+                        <option value="TUE">Tuesday</option>
+                        <option value="WED">Wednesday</option>
+                        <option value="THU">Thursday</option>
+                        <option value="FRI">Friday</option>
                       </Select>
                     </Box>
 
@@ -146,6 +174,7 @@ const Join = () => {
                       mt="48px"
                       h="52px"
                       fontSize="20px"
+                      type="submit"
                     >
                       <Text as="b" color="darkBlue">
                         Submit
@@ -162,12 +191,17 @@ const Join = () => {
                       </Text>
                     </Box>
                   </VStack>
-                </FormControl>
               </Box>
+              </Form>
+              </Formik>
+
+
             </Box>
           </Box>
         </Box>
       </Box>
+
+
       <Box mt={{ base: "0", lg: "-950px" }}>
         <Box w="full" h="150px" layerStyle="afton" />
         <Box pb="20px">

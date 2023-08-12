@@ -1,4 +1,5 @@
 import { Routes, Route } from 'react-router-dom';
+import { checkAuth } from '../views/Login/user';
 
 import Main from '../views';
 import Login from '../views/Login';
@@ -9,6 +10,7 @@ import About from '../views/About';
 
 import Join from '../views/Join';
 //
+import Submitted from '../views/Join/Submitted';
 
 
 import Events from '../views/Events';
@@ -17,6 +19,7 @@ import MemberList from '../views/Members/memberList';
 import MyProfile from '../views/Members/myProfile';
 
 import Admin from '../views/Admin';
+import PrivateRoute from '../views/Admin/PrivateRoute';
 
 import Accounts from '../views/Admin/Accounts';
 import Create from '../views/Admin/Accounts/create';
@@ -29,17 +32,34 @@ import Officers from '../views/Admin/Officers';
 
 import Perks from '../views/Perks';
 
+//Images for featured
+import meID from '../assets/edit_PDID.png';
+import Project from '../assets/proj.png';
+
+const featured =[
+  {
+      memberImg:`${meID}`,
+      member: 'Andrea Adalem',
+      memberDesc: 'Hi Im Andrea, everyones ate schi <3 mwamwa chupchup',
+      projectImg: `${Project}`,
+      projectDesc: 'A software for learning robotics using virtual environments',
+      projectLink: 'https://pebbles-robotics.web.app/',
+  }
+]
+
 const AppRoutes = () => {
 
     return (
       <Routes>
-        
         <Route path="/login" element={<Login />} />
 
         <Route path="/" element={<Main />}>
-          <Route path="" element={<Home />} />
+          <Route path="" element={<Home featured={featured} />} />
           <Route path="about" element={<About />} />
           <Route path="join" element={<Join />} />
+
+          <Route path="/submit" element={<Submitted />} />
+         
 
           <Route path="events" element={<Events />} />
           <Route path="perks" element={<Perks />} />
@@ -50,8 +70,14 @@ const AppRoutes = () => {
             <Route path=":id" element={<MyProfile />} />
           </Route>
 
-          <Route path="admin" element={<Admin />}>
-            <Route path="accounts" element={<Accounts />}>
+          
+          <Route path="admin" element={
+            <PrivateRoute>
+              <Admin featured={featured} />
+            </PrivateRoute>
+          } />
+
+            {/**<Route path="accounts" element={<Accounts />}>
               <Route path="" element={<ListAccounts />}/>
               <Route path="create" element={<Create />} />
             </Route>
@@ -59,7 +85,7 @@ const AppRoutes = () => {
               <Route path="" element={<ListEvent />} />
             </Route>
             <Route path="officers" element={<Officers />}/>
-          </Route>
+    </Route>*/}
 
         </Route>
           

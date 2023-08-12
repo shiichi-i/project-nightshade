@@ -37,7 +37,7 @@ const Footer = ({ navigationLinks = [] }) => {
           >
             <Box
               display="flex"
-              fledDir={{ base: "column", md: "unset" }}
+              flexDir={{ base: "column", md: "unset" }}
               w="full"
             >
               <Box h="150px" w={{ base: "90%", md: "50%" }}>

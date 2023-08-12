@@ -4,6 +4,7 @@ import pdLogo from '../../assets/logo_blk.png';
 import { auth } from '../../firebase-config';
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
+import { checkAuth } from "./user";
 
 const Login = () => {
 
@@ -21,6 +22,7 @@ const Login = () => {
             e.preventDefault();
             signInWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
+                checkAuth();
                 toast({
                     title: 'Logged in',
                     status: 'success',
@@ -51,7 +53,7 @@ const Login = () => {
                                         <SimpleGrid spacing={8}>
                                             <GridItem>
                                                 <FormLabel textColor="white">Organization email</FormLabel>
-                                                <Input isInvalid={error} textColor="white" type="email" placeholder="example@progden.dev" onChange={e=>setEmail(e.target.value)}/>
+                                                <Input isInvalid={error} type="email" placeholder="example@progden.dev" onChange={e=>setEmail(e.target.value)}/>
                                             </GridItem>
 
                                             <GridItem>
@@ -61,7 +63,6 @@ const Login = () => {
                                                     pr='4.5rem'
                                                     type={show ? 'text' : 'password'}
                                                     placeholder='Enter password'
-                                                    textColor="white"
                                                     onChange={e=>setPassword(e.target.value)}
                                                     isInvalid={error}
                                                     />
