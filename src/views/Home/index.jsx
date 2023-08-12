@@ -33,7 +33,7 @@ const Home = () => {
             <motion.div
             animate={{ opacity: [0,1], y: ['25px', '0px']}}
             transition={{ duration: 0.5, delay: 0.5 }}>
-            <Box w="90vw" h="80vh" display="flex" flexDir={{base: 'column', md: 'row-reverse'}} mt="24px">
+            <Box w="90vw" h="80vh" display="flex" flexDir={{base: 'column', md: 'row-reverse'}} mt={{md:"-170px",lg:"-100px",xl:"24px"}}>
                 <Box w={{base: '100%', md: '50%'}} h="full" position="relative"  >
                     {/** graphic */}
                     <Box h="full" display="flex" alignItems="center">
