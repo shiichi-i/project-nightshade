@@ -41,33 +41,33 @@ const Home = ({ featured = [] }) => {
             <motion.div
             animate={{ opacity: [0,1], y: ['25px', '0px']}}
             transition={{ duration: 0.5, delay: 0.5 }}>
-            <Box w="90vw" h="80vh" display="flex" flexDir={{base: 'column', md: 'row-reverse'}} mt="24px">
-                <Box w={{base: '100%', md: '50%'}} h="full" position="relative"  >
+            <Box w="90vw" h="80vh" display="flex" flexDir={{base: 'column', lg: 'row-reverse'}} mt="24px">
+                <Box w={{base: '100%', lg: '50%'}} h="full" position="relative"  >
                     {/** graphic */}
                     <Box h="full" display="flex" alignItems="center">
 
                         {/** Polygon */}
-                        <Box position="absolute" left={{base: '40vw', md: '25vw'}}>
+                        <Box position="absolute" left={{base: '40vw', lg: '25vw'}}>
                             <motion.div
                             animate={{ rotate: [359, 0, 0] }}
                             transition={{ duration: 2, repeat: Infinity }}
                             >
-                                <Image src={Polygon} w={{base: '200px', md: '25vw'}} />
+                                <Image src={Polygon} w={{base: '200px', lg: '25vw'}} />
                             </motion.div>
                         </Box>
                         
 
                         {/** Circle */}
-                        <Box position="absolute" left={{base: '15vw', md: '5vw'}} bottom={{base: '8vh', md: '24vh'}}>
+                        <Box position="absolute" left={{base: '15vw', lg: '5vw'}} bottom={{base: '8vh', lg: '24vh'}}>
                             <motion.div
                             animate={{ scale: [1, 1.5, 1] }}
                             transition={{ duration: 8, repeat: Infinity }}>
-                                <Box layerStyle="afton" borderRadius="50%" w={{base: '55px', md: '100px'}} h={{base: '55px', md: '100px'}}/>
+                                <Box layerStyle="afton" borderRadius="50%" w={{base: '55px', lg: '100px'}} h={{base: '55px', lg: '100px'}}/>
                             </motion.div>
                         </Box>
 
                         {/** Star */}
-                        <Box position="absolute" left={{base: '25vw', md: '10vw'}} bottom={{base: '5vh', md: '15vh'}}>
+                        <Box position="absolute" left={{base: '25vw', lg: '10vw'}} bottom={{base: '5vh', lg: '15vh'}}>
                             <motion.div
                             animate={{ rotate: [0, 359] }}
                             transition={{ duration: 8, repeat: Infinity }}
@@ -77,7 +77,7 @@ const Home = ({ featured = [] }) => {
                         </Box>
                     
                         {/** PD graphic */}
-                        <Box position="absolute" left={{base: '15vw', md: '5vw'}} >
+                        <Box position="absolute" left={{base: '15vw', lg: '5vw'}} >
                             <motion.div
                             animate = {{ marginTop: ['0px','-45px', '0px'] }}
                             transition = {{ duration: 3, repeat: Infinity }}
@@ -89,7 +89,7 @@ const Home = ({ featured = [] }) => {
                     </Box>
                     
                 </Box>
-                <Box w={{base: '100%', md: '50%'}} h="full"
+                <Box w={{base: '100%', lg: '50%'}} h="full"
                 display="flex" alignItems="center" justifyContent="center" >
                     {/** text */}
                     <Box ml="5vw">
@@ -119,7 +119,7 @@ const Home = ({ featured = [] }) => {
 
             {featured.map((feat) => (
                 <Box key={feat.member} w="full">
-            <Image src={Purple} w="full" mt={{base: '-25px', md: '-170px'}} />
+            <Image src={Purple} w="full" mt={{base: '-25px', md: '-140px'}} />
             <Box w="full" bg="midnight" display="flex" alignItems='center' justifyContent='center'>
 
                 <Box w="90vw" display="flex" flexDir={{base: 'column', md: 'row'}} bg='midnight'>
