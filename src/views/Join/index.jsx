@@ -9,19 +9,26 @@ import {
   List,
   OrderedList,
   ListItem,
-  FormErrorMessage,
-  FormControl,
 } from "@chakra-ui/react";
 import { Form, Formik, useFormik } from "formik";
 import { FormSchema } from '../../components/FormSchema';
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 
+import { db } from '../../firebase-config';
+import { collection, addDoc } from 'firebase/firestore';
+
+
 const Join = () => {
 
   const nav = useNavigate();
 
   const [loading, setLoading] = useState();
+
+  const createInterview = async (values) => {
+    await addDoc(collection(db, "interviews"), { name: values.name, studentNo: values.studentNo,
+    course: values.course, division: values.division, date: values.date })
+}
 
   useEffect(() => {
     if (loading) {
@@ -43,7 +50,7 @@ const Join = () => {
     },
     validationSchema: FormSchema,
     onSubmit: (values) => {
-      console.log(values);
+      createInterview(values);
       setLoading(true);
       
     },
@@ -154,7 +161,7 @@ const Join = () => {
                           *
                         </Text>
                       </Box>
-                      <Select name="division" value={values.division} onChange={handleChange} bg={values.division=="Multimedia"? "midnight": "secondary"}>
+                      <Select name="division" value={values.division} onChange={handleChange} bg={values.division==="Multimedia"? "midnight": "secondary"}>
                         <option value="Main">
                           Main &#40; Web, App, Game Development & Competition
                           &#41;

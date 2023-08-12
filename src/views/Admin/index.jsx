@@ -1,43 +1,46 @@
-import { Box, Heading, Text, Button, Icon, TableContainer, Table, Thead, Tr, Th, Tbody, Td, useDisclosure, Modal, ModalOverlay, ModalContent, Image } from "@chakra-ui/react";
+import { Box, Heading, Text, Button, Icon, TableContainer, Table, Thead, Tr, Th, Tbody, Td, useDisclosure, Modal, ModalOverlay, ModalContent, Image, useToast } from "@chakra-ui/react";
 import { FiEdit3, FiTrash2 } from "react-icons/fi";
 import { auth } from '../../firebase-config';
 import { checkAuth } from '../../views/Login/user';
 import { useNavigate } from "react-router-dom";
 
-const dummyData = [
-    {
-        studentNo: '12',
-        name: 'Juan Dela Cruz',
-        course: 'BS Information Technology',
-        date: 'WED',
-        division: 'Main',
-    },
-    {
-        studentNo: '13',
-        name: 'Juan Dela Cruz',
-        course: 'BS Information Technology',
-        date: 'TUE',
-        division: 'Mutltimedia',
-    },
-    {
-        studentNo: '14',
-        name: 'Juan Dela Cruz',
-        course: 'BS Information Technology',
-        date: 'WED',
-        division: 'Main',
-    },
-    {
-        studentNo: '15',
-        name: 'Juan Dela Cruz',
-        course: 'BS Information Technology',
-        date: 'TUE',
-        division: 'Main',
-    },
-
-];
+import { db } from '../../firebase-config';
+import { collection, query, onSnapshot,deleteDoc, doc } from 'firebase/firestore';
+import { useState, useEffect } from "react";
 
 const Admin = ({ featured = [] }) => {
 
+  useEffect(() => {
+      const getInterviews = async () => {
+          const accountData = query(collection(db, "interviews"));
+          onSnapshot(accountData, (snapshot) => {
+              setInterviews(snapshot.docs.map((doc) => ({...doc.data(), id: doc.id})))
+          })
+      }
+      getInterviews()
+  }, [])
+
+  const toast = useToast();
+  
+  const [delId, setDelId] = useState("");
+  const handleDelete  = (id) => {
+    onDelOpen()
+    setDelId(id)
+}
+  const deleteAccount = async () => {
+      onDelClose()
+    await deleteDoc(doc(db, "interviews", delId))
+    toast({
+      title: 'Account deleted.',
+      description: "Account has been successfully deleted.",
+      status: 'success',
+      duration: 2000,
+      isClosable: true,
+    })
+  }
+
+
+  const [interviews, setInterviews] = useState([]);
   const nav = useNavigate();
 
   const handleLogout= (e) => {
@@ -48,6 +51,7 @@ const Admin = ({ featured = [] }) => {
 }
 
   const { isOpen: isLogOutOpen, onOpen: onLogOutOpen, onClose: onLogOutClose } = useDisclosure();
+  const { isOpen: isDelOpen, onOpen: onDelOpen, onClose: onDelClose } = useDisclosure();
 
 
   return (
@@ -68,6 +72,18 @@ const Admin = ({ featured = [] }) => {
             <Box display="flex">
               <Button variant="outline" m="2" textColor="secondary" onClick={onLogOutClose}>Cancel</Button>
               <Button variant="outline" m="2" layerStyle="seafoam" onClick={handleLogout}>Confirm</Button>
+            </Box>
+          </ModalContent>
+
+        </Modal>
+
+        <Modal isOpen={isDelOpen} onClose={onDelClose} >
+          <ModalOverlay />
+          <ModalContent bg="darkBlue" p="10" display='flex' justifyContent="center">
+            <Text as="b">Delete Entry?</Text>
+            <Box display="flex">
+              <Button variant="outline" m="2" textColor="secondary" onClick={onLogOutClose}>Cancel</Button>
+              <Button variant="outline" m="2" layerStyle="afton" onClick={deleteAccount}><Text>Delete</Text></Button>
             </Box>
           </ModalContent>
 
@@ -188,7 +204,6 @@ const Admin = ({ featured = [] }) => {
       {/** Data Table Section */}
         <Box w="full" h="10px" layerStyle="bubblegum"/>
 
-            
         <Box mb="80px">
             <TableContainer m="36px" border="solid 3px" borderColor="#57E9D8" borderRadius="40px" >
                 <Table m="24px" variant='striped' colorScheme="whiteAlpha">
@@ -203,15 +218,15 @@ const Admin = ({ featured = [] }) => {
                         </Tr>
                     </Thead>
                     <Tbody>
-                        {dummyData.map((data) => (
-                            <Tr key={data.studentNo}>
+                        {interviews.map((data) => (
+                            <Tr key={data.id}>
                                 <Td textColor="white">{data.studentNo}</Td>
                                 <Td textColor="white">{data.name}</Td>
                                 <Td textColor="white">{data.course}</Td>
                                 <Td textColor="white">{data.date}</Td>
                                 <Td textColor="white">{data.division}</Td>
                                 <Td>
-                                    <Button bg="transparent" border="solid 2px white" h="50px" w="50px" borderRadius="50%">
+                                    <Button onClick={() => handleDelete(data.id)} bg="transparent" border="solid 2px white" h="50px" w="50px" borderRadius="50%">
                                         <Icon as={FiTrash2} color="white" boxSize="7" m="9px"/>
                                     </Button>
                                 </Td>
