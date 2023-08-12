@@ -121,9 +121,13 @@ const Home = ({ featured = [] }) => {
                 <Box key={feat.member} w="full">
             <Image src={Purple} w="full" mt={{base: '-25px', md: '-140px'}} />
             <Box w="full" bg="midnight" display="flex" alignItems='center' justifyContent='center'>
-
+            <motion.div
+                    initial={{ opacity: 0, scale: 0.5 }}
+                    whileInView={{ opacity: 1, y: 0, scale: 1  }}
+                    transition={{ duration: 0.5 }}
+                    viewport={{ once: true, amount: 0.5 }}>
                 <Box w="90vw" display="flex" flexDir={{base: 'column', md: 'row'}} bg='midnight'>
-
+               
                     <Box w={{base: '100%',md:'50%'}} my="20px"
                     display="flex" alignItems="center" justifyContent="center">
 
@@ -153,6 +157,7 @@ const Home = ({ featured = [] }) => {
   
                         </Box>
                     </Box>
+                    
                 <Box w={{base: '100%',md:'50%'}}
                 display="flex" alignItems="center" justifyContent="center">
 
@@ -167,10 +172,16 @@ const Home = ({ featured = [] }) => {
                         </Box>
                     </Box>
                 </Box>
+                </motion.div>
             </Box>
 
             <Image src={HeadPurple} w="full" />
             <Box display="flex" justifyContent="center" alignItems="center">
+            <motion.div
+                    initial={{ opacity: 0, scale: 0.5 }}
+                    whileInView={{ opacity: 1, y: 0, scale: 1  }}
+                    transition={{ duration: 0.5 }}
+                    viewport={{ once: true, amount: 0.5 }}>
             <Box w="80vw" display="flex" flexDir={{base: 'column', md: 'row-reverse'}}  pb="120px" mt="-2vw" justifyContent="center" alignItems="center" >
 
                 <Box w={{base: '100%',md:'50%'}}
@@ -211,6 +222,7 @@ const Home = ({ featured = [] }) => {
                 </Box>
             </Box>
             </Box>
+            </motion.div>
             </Box>
             </Box>))}
 
@@ -284,21 +296,39 @@ const Home = ({ featured = [] }) => {
             <Box display="flex" flexDir="column" mb="8" alignItems="center">
                 <Box display="flex" alignItems='center' justifyContent='center'>
                     <SimpleGrid columns={{base:1,md:3}} spacing={{base: '20px', lg: '48px'}}>
+                        <motion.li 
+                        initial={{ opacity: 0, y: -10 }}
+                        whileInView={{ opacity: 1, y: 0  }}
+                        transition={{ duration: 0.4, delay: 0 }}
+                        viewport={{ once: true, amount: 0.4 }}>
                         <Marketing 
                         icon={FiBriefcase}
                         heading='GET INDUSTRY EXPERIENCE'
                         text='Learn how professionals in the industry work and prepare 
                         yourself as Programmers’ Den operates under industry standards'/>
+                        </motion.li>
+                        <motion.li 
+                        initial={{ opacity: 0, y: -10 }}
+                        whileInView={{ opacity: 1, y: 0  }}
+                        transition={{ duration: 0.4, delay: 0.4 }}
+                        viewport={{ once: true, amount: 0.4 }}>
                         <Marketing
                         icon={FiUsers}
                         heading='COLLABORATE WITH SENIOR PROGRAMMERS'
                         text='Get trained by your mentors and learn to 
                         manage projects with otherkilled members'/>
+                        </motion.li>
+                        <motion.li 
+                        initial={{ opacity: 0, y: -10 }}
+                        whileInView={{ opacity: 1, y: 0  }}
+                        transition={{ duration: 0.4, delay: 0.8 }}
+                        viewport={{ once: true, amount: 0.4 }}>
                         <Marketing
                         icon={FiCpu}
                         heading='USE AI TECHNOLOGY'
                         text='We see AI as a tool to improve and innovate. 
                         Learn how to use modern technologies like AI to become a better programmer'/>
+                        </motion.li>
                         
                         </SimpleGrid>
                 </Box>
