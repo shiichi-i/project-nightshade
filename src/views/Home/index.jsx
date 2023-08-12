@@ -111,8 +111,15 @@ const Home = () => {
             <Image src={Purple} w="full" mt={{base: '-25px', md: '-170px'}} />
             <Box w="full" h="500px" bg="midnight" display="flex" alignItems='center' justifyContent='center'>
                 {/* MEMBER OF THE MONTH IMAGE PLACEHOLDER*/}
+                <motion.div
+                    initial={{ opacity: 0, y: -10, scale: 0.5 }}
+                    whileInView={{ opacity: 1, y: 0, scale: 1  }}
+                    transition={{ duration: 0.5 }}
+                    viewport={{ once: true, amount: 0.8 }}>
                 <Box w="90vw" h="500px" display="flex" flexDir={{base: 'column', md: 'row'}} bg='midnight'>
                     {/*PARENT BOX OF THE SHAPES DIV*/}
+                    
+                
                     <Box ml={{md:'25px'}} w={{base: '100%',md:'50%'}} h='full'
                     display="flex" alignItems="center" justifyContent="center"  position="relative" minHeight='250px'>
                         {/*SHAPES FORMATTING AND POSITIONING*/}
@@ -139,6 +146,7 @@ const Home = () => {
                                 </Box>      
                         </Box>
                     </Box>
+                    
                 {/*PARENT BOX OF THE DETAILS DIV*/}
                 <Box w={{base: '100%',md:'50%'}} h="full"
                 display="flex" alignItems="flex-start" justifyContent="center"  position="relative">
@@ -147,7 +155,7 @@ const Home = () => {
                         <Heading fontSize={{base:'25px',md:'30px', lg:'35px'}} color="rgb(18,198,176)"pb="15px" whiteSpace='nowrap'>MEMBER OF THE MONTH</Heading>
                         <Heading fontSize={{base:"25px",md:'30px', lg:'35px'}}pb={{base:'10px',md:"10px"}} color="rgb(22,20,43)">Juan Dela Cruz</Heading>
                             <Box w={{base:"95%",md:"95%"}}>
-                                <Text fontSize={{base:"14px"}} color="rgb(22,20,43)" mb='20px'>
+                                <Text fontSize={{base:"14px", lg:'17px'}} color="rgb(22,20,43)" mb='20px'>
                                     Hi I’m Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
                                     sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                                     Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
@@ -156,9 +164,16 @@ const Home = () => {
                         </Box>
                     </Box>
                 </Box>
+                </motion.div>
             </Box>
             {/*PUTTING THE CURVED DESIGN IN THE PAGE*/}
             <Image src={HeadPurple} w="full" mt={{base: '-25px', md: '-10px'}} />
+            <Box>
+            <motion.div
+                    initial={{ opacity: 0, y: -10, scale: 0.5 }}
+                    whileInView={{ opacity: 1, y: 0, scale: 1  }}
+                    transition={{ duration: 0.5 }}
+                    viewport={{ once: true, amount: 0.8 }}>
             <Box w="90vw" h="500px" display="flex" flexDir={{base: 'column', md: 'row-reverse'}} mb={{base:'0px',md:'-100px'}}>
                 {/*PLACEHOLDER FOR THE PROJECT SHOWCASE*/}
                 <Box w={{base: '100%',md:'50%'}} h="full"
@@ -194,31 +209,58 @@ const Home = () => {
                     </Box>
                 </Box>
             </Box>
+            
+            </Box>
+            </motion.div>
             </Box>
 
             {/*Marketing */}
             <Box display="flex" flexDir="column" h="200px" alignItems="center">
                 <Box display="flex" alignItems='center' justifyContent='center'>
+                    
                     <SimpleGrid columns={{base:1,md:3}} spacing={{base: '20px', lg: '48px'}}>
+                        <motion.div
+                    initial={{ opacity: 0, y: -10, scale: 0.5 }}
+                    whileInView={{ opacity: 1, y: 0, scale: 1  }}
+                    transition={{ duration: 0.5 }}
+                    viewport={{ once: true, amount: 0.8 }}>
                         <Marketing 
                         icon={FiBriefcase}
                         heading='GET INDUSTRY EXPERIENCE'
                         text='Learn how professionals in the industry work and prepare 
                         yourself as Programmers’ Den operates under industry standards'/>
+                        </motion.div>
+                        <motion.div
+                    initial={{ opacity: 0, y: -10, scale: 0.5 }}
+                    whileInView={{ opacity: 1, y: 0, scale: 1  }}
+                    transition={{ duration: 0.5 }}
+                    viewport={{ once: true, amount: 0.8 }}>
                         <Marketing
                         icon={FiUsers}
                         heading='COLLABORATE WITH SENIOR PROGRAMMERS'
                         text='Get trained by your mentors and learn to 
                         manage projects with otherkilled members'/>
+                        </motion.div>
+                        <motion.div
+                    initial={{ opacity: 0, y: -10, scale: 0.5 }}
+                    whileInView={{ opacity: 1, y: 0, scale: 1  }}
+                    transition={{ duration: 0.5 }}
+                    viewport={{ once: true, amount: 0.8 }}>
                         <Marketing
                         icon={FiCpu}
                         heading='USE AI TECHNOLOGY'
                         text='We see AI as a tool to improve and innovate. 
                         Learn how to use modern technologies like AI to become a better programmer'/>
-                        
+                        </motion.div>
                         </SimpleGrid>
                 </Box>
+               
                 <Box m="24px" w="full"  display="flex" justifyContent={{base: 'center', md: 'flex-end'}}>
+                <motion.div
+                    initial={{ opacity: 0, y: -10, scale: 0.5 }}
+                    whileInView={{ opacity: 1, y: 0, scale: 1  }}
+                    transition={{ duration: 0.5 }}
+                    viewport={{ once: true, amount: 0.8 }}>
                     <Box w={{base:'200px',lg:"400px"}}>
                             <motion.div
                                 whileHover={{ scale: 1.05 }}
@@ -229,10 +271,13 @@ const Home = () => {
                                 </Button>
                             </motion.div>
                     </Box>
+                    </motion.div>
                 </Box>
+                
             </Box>
             <Box w="90vw" h="100px" display="flex" flexDir={{base: 'column', md: 'row-reverse'}} mb={{base:'0px',md:'-100px'}}>
             </Box>
+            
         </Box>
     );
 };
