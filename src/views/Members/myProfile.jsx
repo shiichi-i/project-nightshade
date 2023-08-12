@@ -1,4 +1,4 @@
-import { Box, Text, Icon, Image, Divider } from "@chakra-ui/react";
+/**import { Box, Text, Icon, Image, Divider } from "@chakra-ui/react";
 import { FiChevronsUp, FiStar } from 'react-icons/fi';
 import { keyframes, styled } from "styled-components";
 import { useState, useEffect } from "react";
@@ -29,10 +29,15 @@ const rainbow = keyframes`
         -webkit-text-stroke-width: 0.3px;
         -webkit-text-stroke-color: white;
     `;
-
+*/
 const Profile = () => {
+    
+ return(
+    <div>
+        <p>Page Unavailable</p>
+    </div>
 
-    const [fName, setFName] = useState("");
+    /**const [fName, setFName] = useState("");
     const [lName, setLName] = useState("");
     const [bioDesc, setBioDesc] = useState("");
     const [senior, setSenior] = useState(false);
@@ -77,7 +82,7 @@ const Profile = () => {
 
                     <Text as="b" fontSize="28px" my="10px" >{fName} {lName}</Text>
 
-                    {/** is Officer */}
+                    {/** is Officer 
                     <Box display="flex" flexDir="row" mb={{base: '30px', md: '0'}}>
                         <Icon as={FiChevronsUp} color="white" boxSize={4} />
                         <Text ml="3">Officer</Text>
@@ -103,16 +108,16 @@ const Profile = () => {
                         </Box>
                         ))}
 
-                    </Box>*/}
+                    </Box>*
                 </Box>
 
-                {/** BIO */}
+                {/** BIO *
                 <Box mt={{base: '0', md: '-80px'}} border="1px solid white" borderRadius="20px" h={{base:'250px', md:'450px'}} w={{base:'full', md:'700px'}} bg="whiteAlpha.300">
                     <Box m={{base: '10px', md: '20px'}}>
                         {/** Image 
                          * 
                          * <Box bg="tomato" w="full" h={{base: '150px', md: '300px'}} />
-                        */}
+                        *
                         <Image src={SonicBanner} objectFit="cover" w="full" h={{base: '150px', md: '300px'}} />
                     </Box>
 
@@ -123,7 +128,7 @@ const Profile = () => {
 
             </Box>
             </Box>
-        </Box>
+                        </Box>*/
     );
 };
 export default Profile;

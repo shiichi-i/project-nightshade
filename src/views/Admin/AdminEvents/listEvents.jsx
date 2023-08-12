@@ -1,5 +1,5 @@
-import { Box, Text, Button, Table, Thead, Tr, Td, Th, Tbody, Checkbox, Icon, TableContainer } from '@chakra-ui/react';
-import { useNavigate, Link } from 'react-router-dom';
+import { Box, Text, Button, Table, Thead, Tr, Td, Th, Tbody, Icon, TableContainer } from '@chakra-ui/react';
+import { useNavigate } from 'react-router-dom';
 import { FiStar } from 'react-icons/fi';
 
 const ListEvent = () => {
