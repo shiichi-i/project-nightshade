@@ -15,10 +15,23 @@ import {
 import { Form, Formik, useFormik } from "formik";
 import { FormSchema } from '../../components/FormSchema';
 import { useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
 
 const Join = () => {
 
   const nav = useNavigate();
+
+  const [loading, setLoading] = useState();
+
+  useEffect(() => {
+    if (loading) {
+      setTimeout(() => {
+        nav("/submit")
+        window.scrollTo(0,0);
+        setLoading(false);
+      }, 2000);
+    }
+  });
 
   const {handleChange, values , handleSubmit, errors, touched} = useFormik({
     initialValues: {
@@ -31,8 +44,8 @@ const Join = () => {
     validationSchema: FormSchema,
     onSubmit: (values) => {
       console.log(values);
-      nav("/submit");
-      window.scrollTo(0,0);
+      setLoading(true);
+      
     },
   })
 
@@ -114,7 +127,7 @@ const Join = () => {
                         </Text>
                       </Box>
                       <Input border={errors.studentNo && touched.studentNo? "solid 2px red" : ""} name="studentNo" placeholder="ex. 202300111" value={values.studentNo} onChange={handleChange} />
-                      {errors.name && touched.name?<Text color="red">{errors.studentNo}</Text>:""}
+                      {errors.studentNo && touched.studentNo?<Text color="red">{errors.studentNo}</Text>:""}
                     </Box>
 
                     <Box w="full">
@@ -175,6 +188,7 @@ const Join = () => {
                       h="52px"
                       fontSize="20px"
                       type="submit"
+                      isLoading={loading}
                     >
                       <Text as="b" color="darkBlue">
                         Submit
