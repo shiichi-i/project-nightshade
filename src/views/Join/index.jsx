@@ -176,7 +176,7 @@ const Join = () => {
                     <Box w="full">
                       <Box display="flex">
                         <Text as="b" fontSize="24px">
-                          Preffered Schedule:
+                          Preferred Schedule:
                         </Text>
                       </Box>
                       <Select placeholder=" " name="date" value={values.date} onChange={handleChange}>
@@ -207,7 +207,7 @@ const Join = () => {
                         following. In compliance with Data Privacy Act 0f 2012,
                         it's implementing rules and regulations, and other
                         issuance of the National Privacy Commission, you
-                        authorize the organization(Programmers' Den) to collect
+                        authorize the organization &#40; Programmers' Den &#41; to collect
                         your data for accomplishing the said activity
                       </Text>
                     </Box>
@@ -267,9 +267,9 @@ const Join = () => {
                   </ListItem>
 
                   <ListItem>
-                      <Text>Regular members are required to pay a </Text>
-                      <Text color="secondary" as="b">membership fee of Php 50.00 </Text>
-                      <Text>per academic year.</Text>
+                      <Text>Regular members are expected to</Text>
+                      <Text color="secondary" as="b">actively participate </Text>
+                      <Text>in all organization activities for the academic year.</Text>
                   </ListItem>
 
                 </OrderedList>

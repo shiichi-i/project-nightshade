@@ -23,7 +23,7 @@ const navigationLinks = [
 
 const DefaultLayout = ({ children }) => {
     return (
-        <Box w="100vw" h="100vh">
+        <Box h="100vh">
 
           <Box w="inherit" h="inherit" zIndex="-1" pos="fixed" bgGradient="linear(to-tl, #bc1eac25 5%, #16142b20 50%)" />
           <Box w="inherit" h="inherit" zIndex="-2" pos="fixed" bgGradient="radial(#223337 15%, #16142b 80%)" />
