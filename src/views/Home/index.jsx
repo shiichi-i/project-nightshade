@@ -36,18 +36,18 @@ const Home = ({ featured = [] }) => {
     const nav = useNavigate();
 
     return(
-        <Box display="flex" w="full" justifyContent="center" alignItems="center" flexDir="column" >
+        <Box display="flex"  justifyContent="center" alignItems="center" flexDir="column" >
             
             <motion.div
             animate={{ opacity: [0,1], y: ['25px', '0px']}}
             transition={{ duration: 0.5, delay: 0.5 }}>
-            <Box w="90vw" h="80vh" display="flex" flexDir={{base: 'column', lg: 'row-reverse'}} mt="24px">
+            <Box h="80vh" display="flex" flexDir={{base: 'column', lg: 'row-reverse'}} mt="24px">
                 <Box w={{base: '100%', lg: '50%'}} h="full" position="relative"  >
                     {/** graphic */}
                     <Box h="full" display="flex" alignItems="center">
 
                         {/** Polygon */}
-                        <Box position="absolute" left={{base: '40vw', lg: '25vw'}}>
+                        <Box position="absolute" left={{base: '40vw', lg: '18vw'}}>
                             <motion.div
                             animate={{ rotate: [359, 0, 0] }}
                             transition={{ duration: 2, repeat: Infinity }}

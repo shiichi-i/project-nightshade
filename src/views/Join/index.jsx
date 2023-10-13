@@ -176,7 +176,7 @@ const Join = () => {
                     <Box w="full">
                       <Box display="flex">
                         <Text as="b" fontSize="24px">
-                          Preffered Schedule:
+                          Preferred Schedule:
                         </Text>
                       </Box>
                       <Select placeholder=" " name="date" value={values.date} onChange={handleChange}>
