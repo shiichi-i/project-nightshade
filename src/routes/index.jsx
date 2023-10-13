@@ -32,14 +32,14 @@ import Officers from '../views/Admin/Officers';*/
 
 
 //Images for featured
-import Stanley from '../assets/vp-multimedia.jpg';
+import MemberImg from '../assets/daddyyy.png';
 import Project from '../assets/proj.png';
 
 const featured =[
   {
-      memberImg:`${Stanley}`,
-      member: 'Stanley Gonzales',
-      memberDesc: 'Hey everyone! Im Stanley, the Vice President of Multimedia for this school year. Im looking for creative people to join the Multimedia team. Its been hard that most of the members are on the Main Division, I want people who have an eye for design to spark the rebirth of the multimedia team. Im looking forward to working with you!',
+      memberImg:`${MemberImg}`,
+      member: 'Thomas Chester Pabalan',
+      memberDesc: "Thank you to the organization for giving me this award, I am extremely grateful. I'll do my best to keep working and make sure that the org's behind-the-scenes activities go smoothly so that our members as well as other CCS students can see and enjoy everything that the Programmers' Den has to offer. Always remember, Grade is JUST a number",
       projectImg: `${Project}`,
       projectDesc: 'A software for learning robotics using virtual environments. Developed by alumni members of Programmers Den as their capstone project. With the help of current President Sigmund. Bringing robotics to life in the digital world',
       projectLink: 'https://pebbles-robotics.web.app/',
